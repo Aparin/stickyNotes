@@ -1,0 +1,18 @@
+.miniNote {
+    width: 100px;
+    height: 100px;
+    background-color: lightgrey;
+    padding: 2px;
+    font-size: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    overflow: hidden;
+}
+
+.preNote {
+    width: autopx;
+    height: autopx;
+    background-color: white;
+    padding: 2px;
+    font-size: 14px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
