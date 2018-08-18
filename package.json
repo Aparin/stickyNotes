@@ -1,13 +1,22 @@
 {
     "name": "stickynotes",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "version": "0.1.0",
+    "description": "веб-стикеры",
+    "main": "dist/main.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "webpack --mode development",
-        "build": "webpack --mode production"
+        "babel": "babel",
+        "dev": "webpack --mode development ./src/index.js --output ./dist/main.js",
+        "build": "webpack --mode production ./src/index.js --output ./dist/main.js"
     },
-    "author": "",
-    "license": "ISC"
+    "author": "Апарин Александр",
+    "license": "ISC",
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.3",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-stage-0": "^6.24.1",
+        "webpack": "^4.16.5",
+        "webpack-cli": "^3.1.0"
+    }
 }
