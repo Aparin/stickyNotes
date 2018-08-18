@@ -7,7 +7,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "babel": "babel",
         "dev": "webpack --mode development ./src/index.js --output ./dist/main.js",
-        "build": "webpack --mode production ./src/index.js --output ./dist/main.js"
+        "build": "webpack --mode production ./src/index.js --output ./dist/main.js --watch"
     },
     "author": "Апарин Александр",
     "license": "ISC",

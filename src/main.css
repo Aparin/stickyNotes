@@ -1,17 +1,20 @@
-.newNote {
+.newSticker {
     width: 100px;
     height: 100px;
-    background-color: lightgreen;
+    background-color: white;
     padding: 2px;
+    margin: 2px;
     font-size: 10px;
-    color: chocolate;
+    color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 1px dotted gray;
     overflow: hidden;
 }
 
-.newNote h1 {
+.newSticker h1 {
     font-size: 12px;
     line-height: 12px;
+    color: darkgreen;
 }
 
 .preNote {
