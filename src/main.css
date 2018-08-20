@@ -8,6 +8,8 @@
     color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border: 1px dotted gray;
+    cursor: move;
+    z-index: 1;
     overflow: hidden;
 }
 

@@ -26,14 +26,37 @@ function makeSticker(obj) {
             var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
             var z = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
 
-            document.write('\n            <div id="' + this.id + '" class="' + this.className + '">\n                <h1>' + head + '</h1>\n                ' + body + '\n            </div>\n            ');
+            document.write('\n                <div id="' + this.id + '" class="' + this.className + '">\n                    <h1>' + head + '</h1>\n                    ' + body + '\n                </div>\n            ');
+
+            // coordinates of sticker
             var place = document.getElementById(id);
             place.style.position = "absolute";
             place.style.left = x + 'px';
             place.style.top = y + 'px';
         }
-    };
-    return newSticker;
+
+        /*
+        const place2 = document.getElementById(id);
+        const func = () => { document.writeln('pushed') };
+        place2.addEventListener("click", func);
+        //document.addEventListener("keypress", getEvtType, false); //[second]  
+        */
+
+        /*
+                    // document.writeln(id);
+                    // var place = document.getElementById(id);
+                    // if (place.onmousedown == true) {
+                    //function() { 
+                    //   document.writeln('worked'); };
+                    //}
+                               
+                        place.onmousedown = function(e) {
+                            //place.style.left = e.pageX - ball.offsetWidth / 2 + 'px';
+                            //place.style.top = e.pageY - ball.offsetHeight / 2 + 'px';
+                        }
+        */
+
+    };return newSticker;
 };
 
 exports.makeSticker = makeSticker;

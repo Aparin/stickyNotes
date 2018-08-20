@@ -1,3 +1,13 @@
+import { movingTheDiv } from './movingTheDiv';
+
+const out = data => {
+    document.getElementById('stickyNotes').innerHTML = data;
+}
+const out2 = data => {
+    document.getElementById('out2').innerHTML = data;
+}
+out('start');
+
 function makeSticker(obj) {
     let { id = 1, className = 'newSticker', head = 'Новый стикер', body = 'Текст стикера' } = obj;
     const newSticker = {
@@ -9,18 +19,27 @@ function makeSticker(obj) {
             return `makeSticker вернул объект: id : ${this.id}, className : ${this.className}, head : ${this.head}, body : ${this.body}`;
         },
         show: function(x = 1, y = 1, z = 1) {
-            document.write(`
-            <div id="${this.id}" class="${this.className}">
-                <h1>${head}</h1>
-                ${body}
-            </div>
+            function showSticker() {
+                document.write(`
+                <div id="${id}" class="${className}">
+                    <h1>${head}</h1>
+                    ${body}
+                </div>
             `);
-            var place = document.getElementById(id);
+            }
+            showSticker();
+
+            // coordinates of sticker
+            const place = document.getElementById(id);
             place.style.position = "absolute";
             place.style.left = x + 'px';
             place.style.top = y + 'px';
+            movingTheDiv(this.id);
+
         }
     }
+
+
     return newSticker;
 
 };
