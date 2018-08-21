@@ -1,4 +1,5 @@
 import { movingTheDiv } from './movingTheDiv';
+import makeDOMelement from './makeDOMelement';
 
 function makeSticker(obj) {
     let { id = 1, className = 'newSticker', head = 'Новый стикер', body = 'Текст стикера' } = obj;
@@ -12,12 +13,13 @@ function makeSticker(obj) {
         },
         show: function(x = 1, y = 1, z = 1) {
             function showSticker() {
-                document.write(`
-                <div id="${id}" class="${className}">
-                    <h1>${head}</h1>
-                    ${body}
-                </div>
-            `);
+                let dom = document.getElementById('stickyNotes');
+                const wrap = makeDOMelement('div', className, '', id);
+                const fragment = document.createDocumentFragment();
+                fragment.appendChild(makeDOMelement('h1', '', head)); // adding headline
+                fragment.appendChild(makeDOMelement('div', '', body));
+                wrap.appendChild(fragment);
+                dom.appendChild(wrap);
             }
             showSticker();
 

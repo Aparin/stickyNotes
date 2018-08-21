@@ -1,8 +1,13 @@
-export default function makeDOMelement(tagName, className, text) {
+export default function makeDOMelement(tagName, className, text, id) {
     const element = document.createElement(tagName);
-    element.classList.add(className);
+    if (className) {
+        element.classList.add(className);
+    }
     if (text) {
         element.textContent = text;
+    }
+    if (id) {
+        element.id = id;
     }
     return element;
 };

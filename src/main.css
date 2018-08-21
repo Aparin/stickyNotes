@@ -19,11 +19,19 @@
     color: darkgreen;
 }
 
-.preNote {
-    width: autopx;
-    height: autopx;
-    background-color: white;
-    padding: 2px;
-    font-size: 14px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.panel {
+    height: 50px;
+    width: 100%;
+    background-color: blue;
+    z-index: 2000000000;
+    cursor: default;
+    padding-left: 10px;
+}
+
+.symbol {
+    color: white;
+    font-size: 48px;
+    width: 50px;
+    cursor: pointer;
+    display: inline-block;
 }
