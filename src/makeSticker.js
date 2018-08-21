@@ -1,13 +1,5 @@
 import { movingTheDiv } from './movingTheDiv';
 
-const out = data => {
-    document.getElementById('stickyNotes').innerHTML = data;
-}
-const out2 = data => {
-    document.getElementById('out2').innerHTML = data;
-}
-out('start');
-
 function makeSticker(obj) {
     let { id = 1, className = 'newSticker', head = 'Новый стикер', body = 'Текст стикера' } = obj;
     const newSticker = {
