@@ -1,5 +1,6 @@
 import { makeSticker } from './makeSticker';
 import { out } from './out';
+let id = 0;
 
 function panel() {
     document.write(`
@@ -11,7 +12,8 @@ function panel() {
     const plus = document.getElementById('plus');
     plus.addEventListener('click', function() {
         // out('click plus');
-        makeSticker({ id: 15, head: 'Super HeadLine', body: 'Some very intresting or important text' }).show(0, 200);
+        id++;
+        makeSticker({ id }).show(0, 200);
     });
 
 
