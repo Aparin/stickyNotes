@@ -1,13 +1,13 @@
 .newSticker {
     width: 100px;
     height: 100px;
-    background-color: white;
+    background-color: lightgreen;
     padding: 2px;
     margin: 2px;
     font-size: 10px;
     color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    border: 1px dotted gray;
+    border: 1px dotted darkgreen;
     cursor: move;
     z-index: 1;
     overflow: hidden;
@@ -16,6 +16,22 @@
 .newSticker h1 {
     font-size: 12px;
     line-height: 12px;
+    color: darkgreen;
+}
+
+.editSticker {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border: 1px dotted darkgreen;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12px;
+    padding: 4px;
+}
+
+.editSticker h1 {
+    font-size: 14px;
+    line-height: 14px;
     color: darkgreen;
 }
 
@@ -34,4 +50,10 @@
     width: 50px;
     cursor: pointer;
     display: inline-block;
+}
+
+.out {
+    position: absolute;
+    left: 0;
+    bottom: 100px;
 }

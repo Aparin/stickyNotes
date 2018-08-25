@@ -1,8 +1,9 @@
 import { movingTheDiv } from './movingTheDiv';
 import makeDOMelement from './makeDOMelement';
+import editSticker from './editSticker';
 
 function makeSticker(obj) {
-    let { id = 1, className = 'newSticker', head = 'Новый стикер', body = 'Текст стикера' } = obj;
+    let { id, className = 'newSticker', head = 'Новый стикер', body = 'Текст стикера' } = obj;
     const newSticker = {
         'id': id,
         'className': className,
@@ -29,8 +30,9 @@ function makeSticker(obj) {
             place.style.left = x + 'px';
             place.style.top = y + 'px';
             movingTheDiv(this.id);
+        },
+        'edit': false
 
-        }
     }
 
 
