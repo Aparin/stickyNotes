@@ -2,6 +2,7 @@ import { makeSticker } from './makeSticker';
 import editSticker from './editSticker';
 import { out } from './out';
 import { sort } from './sort';
+import { save } from './save';
 let id = 0;
 
 function panel() {
@@ -9,6 +10,7 @@ function panel() {
         <div id="panel" class="panel">
             <div id="plus" class="symbol" title="Добавить стикер">+</div>
             <div id="sort" class="symbol" style="font-size: 44px;" title="Упорядочить">≚</div>
+            <div id="save" class="symbol" style="font-size: 35px;" title="Сохранить всё">💾</div>
         </div>`);
 
     // clicked on 'plus' 
@@ -23,6 +25,10 @@ function panel() {
         sort();
     });
 
+    // cliked on 'save'
+    document.getElementById('save').addEventListener('click', function() {
+        save();
+    });
 
 };
 

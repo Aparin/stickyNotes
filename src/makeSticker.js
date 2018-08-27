@@ -30,8 +30,7 @@ function makeSticker(obj) {
             place.style.left = x + 'px';
             place.style.top = y + 'px';
             movingTheDiv(this.id);
-        },
-        'edit': false
+        }
 
     }
 
