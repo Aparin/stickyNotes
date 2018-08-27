@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return editSticker; });\n/* harmony import */ var _makeSticker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./makeSticker */ \"./src/makeSticker.js\");\n\r\n\r\nfunction editSticker(id) {\r\n    let sticker = document.getElementById(id);\r\n    let head = Object(_makeSticker__WEBPACK_IMPORTED_MODULE_0__[\"makeSticker\"])(id).head;\r\n    let body = Object(_makeSticker__WEBPACK_IMPORTED_MODULE_0__[\"makeSticker\"])(id).body;\r\n    sticker.addEventListener('dblclick', function() {\r\n        if (sticker.className === 'newSticker') {\r\n            sticker.classList = 'editSticker';\r\n            sticker.innerHTML = (`<input type=\"text\"size=\"38\" name=\"head\" style=\"border: 0px; font-size:14px; width:290px; margin: 5px;\" value=\"${head}\" /><br />\t\r\n            <textarea style=\"width: 290px; height:265px;  margin: 3px; border: 0px;\" name=\"textArea\">${body}</textarea>`);\r\n\r\n        } else {\r\n            sticker.className = 'newSticker';\r\n        }\r\n\r\n    });\r\n}\n\n//# sourceURL=webpack:///./src/editSticker.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return editSticker; });\n/* harmony import */ var _makeSticker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./makeSticker */ \"./src/makeSticker.js\");\n/* harmony import */ var _out__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./out */ \"./src/out.js\");\n\r\n\r\n\r\nfunction editSticker(id) {\r\n    let sticker = document.getElementById(id);\r\n    let head = sticker.children[0].textContent;\r\n    let body = sticker.children[1].textContent;\r\n\r\n    sticker.addEventListener('dblclick', function() {\r\n        if (sticker.className === 'newSticker') {\r\n            sticker.classList = 'editSticker';\r\n            sticker.innerHTML = (`<input type=\"text\" name=\"head\" style=\"border: 0px; font-size:14px; width:290px; margin: 5px;\" value=\"${head}\" /><br />\t\r\n            <textarea style=\"width: 290px; height:265px;  margin: 3px; border: 0px;\" name=\"textArea\">${body}</textarea>`);\r\n\r\n        } else {\r\n            head = sticker.children[0].value;\r\n            body = sticker.getElementsByTagName('textArea')[0].value;\r\n\r\n            sticker.innerHTML = `<h1>${head}</h1><div>${body}</div>`;\r\n            sticker.className = 'newSticker';\r\n        }\r\n\r\n    });\r\n}\n\n//# sourceURL=webpack:///./src/editSticker.js?");
 
 /***/ }),
 
@@ -154,7 +154,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"out\", function() { return out; });\nfunction out(data) {\r\n    document.getElementById('stickyNotes').innerHTML = data;\r\n};\r\n\r\n\n\n//# sourceURL=webpack:///./src/out.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"out\", function() { return out; });\nfunction out(data) {\r\n    document.getElementById('out').innerHTML = data;\r\n};\r\n\r\n\n\n//# sourceURL=webpack:///./src/out.js?");
 
 /***/ }),
 

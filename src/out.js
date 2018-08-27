@@ -1,5 +1,5 @@
 function out(data) {
-    document.getElementById('stickyNotes').innerHTML = data;
+    document.getElementById('out').innerHTML = data;
 };
 
 export { out };
