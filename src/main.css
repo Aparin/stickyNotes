@@ -2,12 +2,13 @@
     width: 100px;
     height: 100px;
     background-color: lightgreen;
+    background: linear-gradient(to top, darkgreen, white);
     padding: 2px;
     margin: 2px;
     font-size: 10px;
     color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    border: 1px dotted darkgreen;
+    border: 1px dotted green;
     cursor: move;
     z-index: 1;
     overflow: hidden;

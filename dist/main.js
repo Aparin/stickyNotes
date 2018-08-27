@@ -154,7 +154,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"out\", function() { return out; });\nfunction out(data) {\r\n    document.getElementById('out').innerHTML = data;\r\n};\r\n\r\n\n\n//# sourceURL=webpack:///./src/out.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"out\", function() { return out; });\nfunction out(data) {\r\n    document.getElementById('out').innerHTML += ' ' + data;\r\n};\r\n\r\n\n\n//# sourceURL=webpack:///./src/out.js?");
 
 /***/ }),
 
@@ -166,7 +166,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"panel\", function() { return panel; });\n/* harmony import */ var _makeSticker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./makeSticker */ \"./src/makeSticker.js\");\n/* harmony import */ var _editSticker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editSticker */ \"./src/editSticker.js\");\n/* harmony import */ var _out__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./out */ \"./src/out.js\");\n\r\n\r\n\r\nlet id = 0;\r\n\r\nfunction panel() {\r\n    document.write(`\r\n        <div id=\"panel\" class=\"panel\">\r\n            <div id=\"plus\" class=\"symbol\" title=\"Добавить стикер\">+</div>\r\n            <div id=\"sort\" class=\"symbol\" style=\"font-size: 44px;\" title=\"Упорядочить\">≚</div>\r\n        </div>`);\r\n\r\n    const plus = document.getElementById('plus');\r\n    plus.addEventListener('click', function() {\r\n        // out('click plus');\r\n        id++;\r\n        Object(_makeSticker__WEBPACK_IMPORTED_MODULE_0__[\"makeSticker\"])({ id }).show(0, 200);\r\n        Object(_editSticker__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(id);\r\n\r\n    });\r\n\r\n\r\n};\r\n\r\n\n\n//# sourceURL=webpack:///./src/panel.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"panel\", function() { return panel; });\n/* harmony import */ var _makeSticker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./makeSticker */ \"./src/makeSticker.js\");\n/* harmony import */ var _editSticker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editSticker */ \"./src/editSticker.js\");\n/* harmony import */ var _out__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./out */ \"./src/out.js\");\n/* harmony import */ var _sort__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sort */ \"./src/sort.js\");\n\r\n\r\n\r\n\r\nlet id = 0;\r\n\r\nfunction panel() {\r\n    document.getElementById('stickyNotes').innerHTML = (`\r\n        <div id=\"panel\" class=\"panel\">\r\n            <div id=\"plus\" class=\"symbol\" title=\"Добавить стикер\">+</div>\r\n            <div id=\"sort\" class=\"symbol\" style=\"font-size: 44px;\" title=\"Упорядочить\">≚</div>\r\n        </div>`);\r\n\r\n    // clicked on 'plus' \r\n    document.getElementById('plus').addEventListener('click', function() {\r\n        id++;\r\n        Object(_makeSticker__WEBPACK_IMPORTED_MODULE_0__[\"makeSticker\"])({ id }).show(0, 200);\r\n        Object(_editSticker__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(id);\r\n    });\r\n\r\n    // cliked on 'sort'\r\n    document.getElementById('sort').addEventListener('click', function() {\r\n        Object(_sort__WEBPACK_IMPORTED_MODULE_3__[\"sort\"])();\r\n    });\r\n\r\n\r\n};\r\n\r\n\n\n//# sourceURL=webpack:///./src/panel.js?");
+
+/***/ }),
+
+/***/ "./src/sort.js":
+/*!*********************!*\
+  !*** ./src/sort.js ***!
+  \*********************/
+/*! exports provided: sort */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sort\", function() { return sort; });\n/* harmony import */ var _out__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./out */ \"./src/out.js\");\n\r\n\r\nfunction sort() {\r\n    // out('this is sort function');\r\n    let width = document.documentElement.clientWidth;\r\n    let height = document.documentElement.clientHeight;\r\n    let numStickInCol = Math.floor((height - 100) / 30);\r\n    // out(numStickInCol);\r\n    for (let i = 1; i < numStickInCol; i++) {\r\n        var exist = document.getElementById(i);\r\n        if (!exist === false) {\r\n            exist.style.top = 20 + i * 50 + 'px';\r\n            exist.style.left = 5 + 'px';\r\n            exist.style.zIndex = i;\r\n        } else { break; }\r\n    }\r\n}\r\n\r\n\n\n//# sourceURL=webpack:///./src/sort.js?");
 
 /***/ }),
 
