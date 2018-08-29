@@ -3,4 +3,4 @@ import { load } from './load';
 
 
 panel();
-// load();
+load();

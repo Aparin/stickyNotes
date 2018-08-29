@@ -2,7 +2,7 @@ import { movingTheDiv } from './movingTheDiv';
 import makeDOMelement from './makeDOMelement';
 import editSticker from './editSticker';
 import out from './out';
-import listener from './out';
+import listener from './listener';
 
 function makeSticker(id, className = 'newSticker', head = 'Новый стикер', body = 'Текст стикера') {
 
@@ -15,7 +15,7 @@ function makeSticker(id, className = 'newSticker', head = 'Новый стике
     fragment.appendChild(makeDOMelement('div', '', body));
     wrap.appendChild(fragment);
     dom.appendChild(wrap);
-    listener(id, "click", editSticker(id));
+    listener(id, "dblclick", editSticker(id));
     /* 
     // coordinates of sticker
     const place = document.getElementById(id);

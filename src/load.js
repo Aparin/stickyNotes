@@ -1,15 +1,13 @@
-import { movingTheDiv } from './movingTheDiv';
-import { editSticker } from './editSticker';
-
+import listener from './listener';
+import editSticker from './editSticker';
 
 function load() {
     document.getElementById('stickyNotes').innerHTML += localStorage.stickers;
 
-    for (let i = 1; true; i++) {
-        var sticker = document.getElementById(i);
+    for (let id = 1; true; id++) {
+        var sticker = document.getElementById(id);
         if (!sticker === false) {
-            movingTheDiv(i);
-            //editSticker(i);
+            listener(id, "dblclick", editSticker(id));
         } else { break; }
     }
 

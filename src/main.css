@@ -55,6 +55,6 @@
 
 .out {
     position: absolute;
-    left: 0px;
-    bottom: 100px;
+    left: 50%;
+    bottom: 50px;
 }
