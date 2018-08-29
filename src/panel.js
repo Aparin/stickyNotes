@@ -16,8 +16,12 @@ function panel() {
     // clicked on 'plus' 
     document.getElementById('plus').addEventListener('click', function() {
         id++;
-        makeSticker({ id }).show(0, 200);
-        editSticker(id);
+        makeSticker(id);
+        // editSticker(id);
+        // new code //
+        // makesticker(id);
+        // listener(id);
+
     });
 
     // cliked on 'sort'
