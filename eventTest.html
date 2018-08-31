@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id='main'></div>
+    <div id='out'></div>
+    <script>
+        function out(data) {
+            document.getElementById('out').innerHTML += data;
+        }
+
+        var main = document.getElementById('main');
+
+        function module1() {
+            main.insertAdjacentHTML('beforeend', '<div id="first">Some text, id=first </div><br />');
+            document.getElementById('first').addEventListener('click', function() {
+                out('clicked on first id ');
+            });
+        }
+
+        function module2() {
+            main.insertAdjacentHTML('beforeend', '<div id="second">Some text, id=second </div><br />');
+            document.getElementById('second').addEventListener('click', function() {
+                out('clicked on second id ');
+            });
+        }
+
+        module1();
+        module2();
+    </script>
+</body>
+
+</html>

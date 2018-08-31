@@ -2,13 +2,14 @@ import { out } from './out';
 
 function save() {
     let localStickers = '';
-    for (let i = 1; true; i++) {
-        let sticker = document.getElementById(i);
+    for (var id = 1; true; id++) {
+        let sticker = document.getElementById(id);
         if (!sticker === false) {
             localStickers += sticker.outerHTML;
         } else { break; }
     }
-    // console.log(localStickers);
-    localStorage.stickers = localStickers;
+
+    localStorage.setItem('stickers', localStickers);
+    localStorage.setItem('id', id - 1);
 }
 export { save };
