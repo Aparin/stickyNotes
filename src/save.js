@@ -1,5 +1,3 @@
-import { out } from './out';
-
 function save() {
     let localStickers = '';
     for (var id = 1; true; id++) {

@@ -1,5 +1,7 @@
 function out(data) {
-    document.getElementById('out').innerHTML += ' ' + data;
+    const element = document.createElement('span');
+    element.textContent = data + ' ';
+    document.getElementById('out').appendChild(element);
 };
 
 export default out;
