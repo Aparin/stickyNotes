@@ -37,9 +37,8 @@
 }
 
 .panel {
-    height: 50px;
-    width: 100%;
-    background-color: blue;
+    height: 40px;
+    background-color: lightgray;
     z-index: 2000000000;
     cursor: default;
     padding-left: 10px;
@@ -47,10 +46,9 @@
 
 .symbol {
     color: white;
-    font-size: 48px;
-    width: 50px;
     cursor: pointer;
     display: inline-block;
+    padding: 4px;
 }
 
 .out {
