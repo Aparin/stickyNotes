@@ -59,7 +59,6 @@
 }
 
 .del {
-    display: inline;
     float: right;
     cursor: pointer;
 }
