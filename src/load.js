@@ -1,7 +1,7 @@
 import listener from './listener';
 import editSticker from './editSticker';
 import mouseOverOut from './mouseOverOut';
-import addDeleteSign from './addDeleteSign';
+import deleteSticker from './deleteSticker';
 
 function load() {
     document.getElementById('stickyNotes').insertAdjacentHTML('beforeend', localStorage.getItem('stickers'));
@@ -11,7 +11,10 @@ function load() {
         if (!sticker === false) {
             listener(id, "dblclick", editSticker(id));
             mouseOverOut(id);
-            addDeleteSign(id);
+            let del = sticker.getElementsByTagName('img');
+            del[0].addEventListener('click', function() {
+                deleteSticker(id);
+            });
         } else { break; }
     }
 
