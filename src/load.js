@@ -1,6 +1,6 @@
 import listener from './listener';
 import editSticker from './editSticker';
-import out from './out';
+import mouseOverOut from './mouseOverOut';
 
 function load() {
     document.getElementById('stickyNotes').insertAdjacentHTML('beforeend', localStorage.getItem('stickers'));
@@ -9,6 +9,7 @@ function load() {
         var sticker = document.getElementById(id);
         if (!sticker === false) {
             listener(id, "dblclick", editSticker(id));
+            mouseOverOut(id);
         } else { break; }
     }
 

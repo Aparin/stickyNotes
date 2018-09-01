@@ -2,6 +2,7 @@ import makeDOMelement from './makeDOMelement';
 import editSticker from './editSticker';
 import out from './out';
 import listener from './listener';
+import mouseOverOut from './mouseOverOut';
 
 function makeSticker(id, className = 'newSticker', head = 'Новый стикер', body = 'Текст стикера') {
 
@@ -13,6 +14,9 @@ function makeSticker(id, className = 'newSticker', head = 'Новый стике
     wrap.appendChild(fragment);
     dom.appendChild(wrap);
     listener(id, "dblclick", editSticker(id));
+
+    mouseOverOut(id);
+
 };
 
 export { makeSticker };

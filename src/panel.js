@@ -1,9 +1,7 @@
 import { makeSticker } from './makeSticker';
-import editSticker from './editSticker';
-import out from './out';
-import { sort } from './sort';
 import { save } from './save';
 import clear from './clear';
+import mouseOverOut from './mouseOverOut'
 
 var id = localStorage.getItem('id');
 
@@ -26,16 +24,19 @@ function panel() {
         id++;
         makeSticker(id);
     });
+    mouseOverOut('plus');
 
     // cliked on 'save'
     document.getElementById('save').addEventListener('click', function() {
         save();
     });
+    mouseOverOut('save');
 
     // cliked on 'clear'
     document.getElementById('clear').addEventListener('click', function() {
         clear();
     });
+    mouseOverOut('clear');
 
 };
 

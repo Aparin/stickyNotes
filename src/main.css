@@ -1,15 +1,13 @@
 .newSticker {
     width: 100px;
     height: 100px;
-    background-color: lightgreen;
-    background: linear-gradient(to top, darkgreen, white);
+    background: linear-gradient(to top, grey, white);
     padding: 2px;
     margin: 2px;
     font-size: 10px;
     color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border: 1px dotted green;
-    cursor: move;
     z-index: 1;
     overflow: hidden;
 }
@@ -37,18 +35,21 @@
 }
 
 .panel {
-    height: 40px;
     background-color: lightgray;
     z-index: 2000000000;
     cursor: default;
-    padding-left: 10px;
+    padding: 4px 4px 4px 10px;
 }
 
 .symbol {
     color: white;
     cursor: pointer;
     display: inline-block;
-    padding: 4px;
+    background: linear-gradient(to top, grey, white);
+}
+
+.mouseover {
+    background: white;
 }
 
 .out {
