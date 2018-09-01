@@ -57,3 +57,9 @@
     left: 50%;
     bottom: 50px;
 }
+
+.del {
+    display: inline;
+    float: right;
+    cursor: pointer;
+}
