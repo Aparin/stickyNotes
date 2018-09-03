@@ -1,10 +1,9 @@
 import { makeSticker } from './makeSticker';
-import { out } from './out';
 
 export default function editSticker(id) {
     let sticker = document.getElementById(id);
-    let head = sticker.children[0].textContent;
-    let body = sticker.children[1].textContent;
+    let head = sticker.children[1].textContent;
+    let body = sticker.children[2].textContent;
 
     sticker.addEventListener('dblclick', function() {
         if (sticker.className === 'newSticker') {
@@ -13,7 +12,7 @@ export default function editSticker(id) {
             <textarea style="width: 290px; height:265px;  margin: 3px; border: 0px;" name="textArea">${body}</textarea>`);
 
         } else {
-            head = sticker.children[0].value;
+            head = sticker.getElementsByTagName('h1')[0].value;
             body = sticker.getElementsByTagName('textArea')[0].value;
 
             sticker.innerHTML = `<h1>${head}</h1><div>${body}</div>`;

@@ -1,7 +1,6 @@
 import makeDOMelement from './makeDOMelement';
 import editSticker from './editSticker';
 import out from './out';
-import listener from './listener';
 import mouseOverOut from './mouseOverOut';
 import addDeleteSign from './addDeleteSign';
 
@@ -17,7 +16,6 @@ function makeSticker(id, className = 'newSticker', head = 'Новый стике
     fragment.appendChild(makeDOMelement('div', '', body));
     wrap.appendChild(fragment);
     dom.appendChild(wrap);
-    listener(id, "dblclick", editSticker(id));
 
     mouseOverOut(id);
 
