@@ -11,7 +11,7 @@ export default function listener() {
         var target = e.target;
         var action = target.getAttribute('data-action');
         if (action == 'delete') {
-            id = deleteSticker(target.parentNode.id);
+            deleteSticker(target.parentNode.id);
         }
     };
 }

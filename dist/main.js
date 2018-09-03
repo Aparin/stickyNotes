@@ -110,6 +110,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/currentId.js":
+/*!**************************!*\
+  !*** ./src/currentId.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return currentId; });\nfunction currentId() {\r\n    for (var id = 1; document.getElementById(id); id++) {}\r\n    return id;\r\n}\n\n//# sourceURL=webpack:///./src/currentId.js?");
+
+/***/ }),
+
 /***/ "./src/deleteSticker.js":
 /*!******************************!*\
   !*** ./src/deleteSticker.js ***!
@@ -154,7 +166,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pan
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return listener; });\n/* harmony import */ var _deleteSticker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./deleteSticker */ \"./src/deleteSticker.js\");\n/* harmony import */ var _out__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./out */ \"./src/out.js\");\n\r\n\r\n\r\nfunction listener() {\r\n    var id = localStorage.getItem('id');\r\n    if (!id) { id = 0; }\r\n\r\n    let field = document.getElementById('stickyNotes');\r\n\r\n    field.onclick = function(e) {\r\n        var target = e.target;\r\n        var action = target.getAttribute('data-action');\r\n        if (action == 'delete') {\r\n            id = Object(_deleteSticker__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(target.parentNode.id);\r\n        }\r\n    };\r\n}\n\n//# sourceURL=webpack:///./src/listener.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return listener; });\n/* harmony import */ var _deleteSticker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./deleteSticker */ \"./src/deleteSticker.js\");\n/* harmony import */ var _out__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./out */ \"./src/out.js\");\n\r\n\r\n\r\nfunction listener() {\r\n    var id = localStorage.getItem('id');\r\n    if (!id) { id = 0; }\r\n\r\n    let field = document.getElementById('stickyNotes');\r\n\r\n    field.onclick = function(e) {\r\n        var target = e.target;\r\n        var action = target.getAttribute('data-action');\r\n        if (action == 'delete') {\r\n            Object(_deleteSticker__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(target.parentNode.id);\r\n        }\r\n    };\r\n}\n\n//# sourceURL=webpack:///./src/listener.js?");
 
 /***/ }),
 
@@ -190,7 +202,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"makeSticker\", function() { return makeSticker; });\n/* harmony import */ var _makeDOMelement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./makeDOMelement */ \"./src/makeDOMelement.js\");\n/* harmony import */ var _editSticker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editSticker */ \"./src/editSticker.js\");\n/* harmony import */ var _out__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./out */ \"./src/out.js\");\n/* harmony import */ var _mouseOverOut__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mouseOverOut */ \"./src/mouseOverOut.js\");\n/* harmony import */ var _addDeleteSign__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./addDeleteSign */ \"./src/addDeleteSign.js\");\n\r\n\r\n\r\n\r\n\r\n\r\nfunction makeSticker(id, className = 'newSticker', head = 'Новый стикер', body = 'Текст стикера') {\r\n\r\n    let dom = document.getElementById('stickyNotes');\r\n    const wrap = Object(_makeDOMelement__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('div', className, '', id);\r\n    const fragment = document.createDocumentFragment();\r\n\r\n    fragment.appendChild(Object(_addDeleteSign__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(id));\r\n\r\n    fragment.appendChild(Object(_makeDOMelement__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('h1', '', head)); // adding headline\r\n    fragment.appendChild(Object(_makeDOMelement__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('div', '', body));\r\n    wrap.appendChild(fragment);\r\n    dom.appendChild(wrap);\r\n\r\n    Object(_mouseOverOut__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(id);\r\n\r\n};\r\n\r\n\n\n//# sourceURL=webpack:///./src/makeSticker.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"makeSticker\", function() { return makeSticker; });\n/* harmony import */ var _makeDOMelement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./makeDOMelement */ \"./src/makeDOMelement.js\");\n/* harmony import */ var _editSticker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editSticker */ \"./src/editSticker.js\");\n/* harmony import */ var _out__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./out */ \"./src/out.js\");\n/* harmony import */ var _mouseOverOut__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mouseOverOut */ \"./src/mouseOverOut.js\");\n/* harmony import */ var _addDeleteSign__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./addDeleteSign */ \"./src/addDeleteSign.js\");\n/* harmony import */ var _currentId__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./currentId */ \"./src/currentId.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nfunction makeSticker() {\r\n    let id = Object(_currentId__WEBPACK_IMPORTED_MODULE_5__[\"default\"])();\r\n\r\n    let area = document.getElementById('stickyNotes');\r\n    const wrap = Object(_makeDOMelement__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('div', 'newSticker', '', id);\r\n    const fragment = document.createDocumentFragment();\r\n\r\n    fragment.appendChild(Object(_addDeleteSign__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(id));\r\n    fragment.appendChild(Object(_makeDOMelement__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('h1', '', 'Новый стикер')); // adding headline\r\n    fragment.appendChild(Object(_makeDOMelement__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('div', '', 'Текст стикера'));\r\n    wrap.appendChild(fragment);\r\n    area.appendChild(wrap);\r\n\r\n    Object(_mouseOverOut__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(id);\r\n\r\n};\r\n\r\n\n\n//# sourceURL=webpack:///./src/makeSticker.js?");
 
 /***/ }),
 
