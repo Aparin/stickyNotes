@@ -1,9 +1,9 @@
-import deleteSticker from './deleteSticker';
-import makeSticker from './makeSticker';
-import currentId from './currentId';
+import deleteSticker from '../singleSticker/deleteSticker';
+import makeSticker from '../singleSticker/makeSticker';
+import currentId from '../singleSticker/currentId';
 import save from './save';
 import clear from './clear';
-import out from './out';
+import out from '../out';
 
 export default function listeners() {
     let id = currentId();

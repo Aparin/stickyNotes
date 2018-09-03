@@ -1,4 +1,4 @@
-import { out } from './out';
+import { out } from '../out';
 
 function sort() {
     // out('this is sort function');

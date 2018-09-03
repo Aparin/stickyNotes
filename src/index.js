@@ -1,6 +1,6 @@
-import panel from './panel';
-import load from './load';
-import listeners from './listeners';
+import panel from './allStickers/panel';
+import load from './allStickers/load';
+import listeners from './allStickers/listeners';
 
 panel();
 if (localStorage.getItem('stickers')) {

@@ -1,4 +1,4 @@
-import { out } from './out';
+import { out } from '../out';
 
 var zIndex = 1;
 

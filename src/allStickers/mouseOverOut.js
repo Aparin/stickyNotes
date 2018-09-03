@@ -1,4 +1,4 @@
-import out from './out'
+import out from '../out'
 export default function mouseOverOut(id) {
     let el = document.getElementById(id);
     el.addEventListener('mouseover', function() {

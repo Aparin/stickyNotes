@@ -1,7 +1,7 @@
-import makeDOMelement from './makeDOMelement';
+import makeDOMelement from './makeDOMElement';
 import editSticker from './editSticker';
-import out from './out';
-import mouseOverOut from './mouseOverOut';
+import out from '../out';
+import mouseOverOut from '../allStickers/mouseOverOut';
 import addDeleteSign from './addDeleteSign';
 import currentId from './currentId';
 
