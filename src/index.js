@@ -1,10 +1,9 @@
-import { panel } from './panel';
+import panel from './panel';
 import load from './load';
-import out from './out';
-import listener from './listener';
+import listeners from './listeners';
 
 panel();
 if (localStorage.getItem('stickers')) {
     load();
 }
-listener();
+listeners();

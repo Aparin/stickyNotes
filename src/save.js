@@ -1,4 +1,4 @@
-function save() {
+export default function save() {
     let localStickers = '';
     for (var id = 1; true; id++) {
         let sticker = document.getElementById(id);
@@ -10,4 +10,3 @@ function save() {
     localStorage.setItem('stickers', localStickers);
     localStorage.setItem('id', id - 1);
 }
-export { save };

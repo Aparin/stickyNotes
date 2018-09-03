@@ -5,7 +5,7 @@ import mouseOverOut from './mouseOverOut';
 import addDeleteSign from './addDeleteSign';
 import currentId from './currentId';
 
-function makeSticker() {
+export default function makeSticker() {
     let id = currentId();
 
     let area = document.getElementById('stickyNotes');
@@ -21,5 +21,3 @@ function makeSticker() {
     mouseOverOut(id);
 
 };
-
-export { makeSticker };
