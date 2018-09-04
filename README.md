@@ -1,4 +1,6 @@
-﻿Декстопный браузерный такс-менеджер. Рабочая версия 1+. 
+﻿﻿Декстопный браузерный такс-менеджер. Рабочая версия 1+. 
 Сохраняет в localStorage.
 
-![screenshot of application](https://github.com/Aparin/stickyNotes/tree/master/img/screenshort.png)
+
+
+![](https://raw.githubusercontent.com/Aparin/stickyNotes/master/img/screenshort.png)
