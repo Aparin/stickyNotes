@@ -1,8 +1,9 @@
-import deleteSticker from '../singleSticker/deleteSticker';
-import makeSticker from '../singleSticker/makeSticker';
-import currentId from '../singleSticker/currentId';
-import save from './save';
-import clear from './clear';
+import deleteSticker from './deleteSticker';
+import makeSticker from './makeSticker';
+import currentId from './currentId';
+import save from '../allStickers/save';
+import clear from '../allStickers/clear';
+import editSticker from './editSticker';
 import out from '../out';
 
 export default function listeners() {
@@ -18,8 +19,6 @@ export default function listeners() {
 
         var action = target.getAttribute('data-action');
         if (action == 'delete') { deleteSticker(target.parentNode.id); }
-
-
-
+        if (action == 'edit') { editSticker(target.parentNode.id); }
     };
 }
