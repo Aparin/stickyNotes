@@ -7,7 +7,7 @@ export default function clear() {
         var div = document.createElement('div');
         div.style.cssText = `
             text-align:center; padding:10px; position:fixed; background-color: white; 
-            width:200px; height:70px; bottom:50%; right:50%; margin-right:-100px; margin-bottom:-20px; border: 1px dotted #000`;
+            width:200px; height:70px; top: 50px; left: 100px; margin-right:-100px; margin-bottom:-20px; border: 1px dotted #000`;
         div.onclick = function(e) {
             if (e.target.value == 'Да') {
                 for (var id = 1; true; id++) {
