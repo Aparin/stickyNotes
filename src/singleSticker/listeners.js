@@ -7,7 +7,6 @@ import editSticker from './editSticker';
 import out from '../out';
 
 export default function listeners() {
-    let id = currentId();
     plus.onclick = function() { makeSticker(); }
     saving.onclick = function() { save(); }
     cleaning.onclick = function() { clear(); }
