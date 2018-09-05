@@ -10,7 +10,7 @@ export default function editSticker(id) {
     sticker.innerHTML = `    
     <img src="img/edit_10.png" class="editBig" title="Закрыть без сохранения" data-action="close">
     <img src="img/save_18.png" class="editBig" title="Применить изменения" data-action="ok">
-    <input type="text" style="width:250px" value="${head}" onchange="document.getElementById('id').innerHTML = this.value"></input>
+    <input type="text" style="width:250px" value="${head}">
     <br />	
     <textarea style="width: 285px; height:260px;  margin: 3px; border: 0px;" name="textArea">${body}</textarea>`;
 
@@ -35,6 +35,7 @@ export default function editSticker(id) {
             sticker.appendChild(addMiniSigns());
             sticker.innerHTML += `<h1>${head}</h1><p>${body}</p>`
         }
+
     };
 
 }
