@@ -6,7 +6,6 @@ import clear from '../allStickers/clear';
 import editSticker from './editSticker';
 import out from '../out';
 import moveTheSticker from './moveTheSticker';
-// import { movingTheDiv } from '../movingTheDiv';
 
 export default function listeners() {
     plus.onclick = function() { makeSticker(); }
@@ -29,8 +28,6 @@ export default function listeners() {
             if (dataAction == 'edit' || dataAction == 'delete' || dataAction == 'ok' || dataAction == 'close') { return }
             if (dataAction == 'sticker') {
                 if (event.which == 1) moveTheSticker(target.id);
-                // if (!window.event.button) out('droped');
-                //out(window.event.mousemove);
                 return;
             }
             target = target.parentNode;

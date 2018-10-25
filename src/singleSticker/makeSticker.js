@@ -6,6 +6,7 @@ import addMiniSigns from './addMiniSigns';
 import currentId from './currentId';
 
 
+
 export default function makeSticker() {
     let id = currentId();
 
@@ -23,8 +24,8 @@ export default function makeSticker() {
     document.getElementById(id).setAttribute('data-action', 'sticker');
     // document.getElementById(id).setAttribute('draggable', 'true');
 
-
     // mouseOverOut(id);
     editSticker(id);
+
 
 };
