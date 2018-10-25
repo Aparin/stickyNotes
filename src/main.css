@@ -12,7 +12,6 @@
     border: 1px dotted green;
     z-index: 1;
     overflow: hidden;
-    cursor: move;
 }
 
 .newSticker h1 {

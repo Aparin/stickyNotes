@@ -17,7 +17,12 @@ export default function makeSticker() {
     fragment.appendChild(makeDOMelement('h1', '', 'Новый стикер')); // adding headline
     fragment.appendChild(makeDOMelement('p', '', ''));
     wrap.appendChild(fragment);
+
     area.appendChild(wrap);
+
+    document.getElementById(id).setAttribute('data-action', 'sticker');
+    // document.getElementById(id).setAttribute('draggable', 'true');
+
 
     // mouseOverOut(id);
     editSticker(id);
