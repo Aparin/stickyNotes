@@ -1,5 +1,5 @@
 import panel from './allStickers/panel';
-import load from './allStickers/load';
+import load from './transmission/load';
 import listeners from './singleSticker/listeners';
 import out from './out';
 

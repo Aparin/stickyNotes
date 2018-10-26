@@ -25,10 +25,4 @@ export default function sort(firstID, secondID) {
         move.id = secondID;
     }
 
-
-
-
-
-    // out2.innerHTML = firstID + ' ' + secondID;
-
 };

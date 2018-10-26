@@ -2,7 +2,7 @@ import out from '../out';
 import addMiniSigns from './addMiniSigns';
 
 export default function editSticker(id) {
-    let sticker = document.getElementById(id);
+    const sticker = document.getElementById(id);
 
     sticker.className = 'editSticker';
     let head = sticker.querySelector('h1').textContent;
@@ -16,8 +16,8 @@ export default function editSticker(id) {
 
 
     sticker.onclick = function(e) {
-        var target = e.target;
-        var action = target.getAttribute('data-action');
+        const target = e.target;
+        const action = target.getAttribute('data-action');
         if (action == 'ok') {
             head = sticker.getElementsByTagName('input')[0].value;
             body = sticker.getElementsByTagName('textArea')[0].value;
