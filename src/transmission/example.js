@@ -1,5 +1,5 @@
 export default function example() {
-    const url = 'http://miruspeha.bget.ru/stickyNotes/example.php';
+    const url = 'https://znanion.ru/files/stickyNotes/example.php';
 
     function httpGet(url) {
         var xhr = new XMLHttpRequest();
