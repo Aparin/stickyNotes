@@ -1,16 +1,22 @@
-import deleteSticker from './deleteSticker';
 import makeSticker from './makeSticker';
+import exmpl from '../transmission/example';
+import deleteSticker from './deleteSticker';
 import currentId from './currentId';
 import save from '../transmission/save';
+import saveToServer from '../transmission/toServer';
 import clear from '../allStickers/clear';
 import editSticker from './editSticker';
 import out from '../out';
 import moveTheSticker from './moveTheSticker';
 
 export default function listeners() {
+    example.onclick = function() { exmpl(); }
     plus.onclick = function() { makeSticker(); }
     saving.onclick = function() { save(); }
     cleaning.onclick = function() { clear(); }
+    toServer.onclick = function() {
+        saveToServer();
+    }
 
     let field = document.getElementById('stickyNotes');
 

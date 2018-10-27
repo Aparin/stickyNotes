@@ -1,13 +1,7 @@
-export default function save() {
-    let localStickers = '';
-    let id;
-    for (id = 1; true; id++) {
-        let sticker = document.getElementById(id);
-        if (!sticker === false) {
-            localStickers += sticker.outerHTML;
-        } else { break; }
-    }
+import currentData from './currentData.js';
 
+export default function save() {
+    const localStickers = currentData();
     localStorage.setItem('stickers', localStickers);
     localStorage.setItem('id', id - 1);
 }
