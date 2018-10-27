@@ -1,6 +1,10 @@
-export default function example() {
-    const url = 'https://znanion.ru/files/stickyNotes/example.php';
+import makeSticker from '../singleSticker/makeSticker';
 
+export default function example() {
+
+    /* На гитхабе хром блокирует кросс-доменную загрузку даже по https. Яндекс-браузер работает норм.
+
+    const url = 'https:// ******.ru/files/stickyNotes/example.php';
     function httpGet(url) {
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url, true);
@@ -14,4 +18,12 @@ export default function example() {
         }
     }
     httpGet(url);
+    */
+    makeSticker('Become an expert in JavaScript', 'As soon as posible', 'newSticker');
+    makeSticker('Learn React', 'On middle level', 'newSticker');
+    makeSticker('Новый стикер', '', 'newSticker');
+    makeSticker('Новый стикер', '', 'newSticker');
+    makeSticker('To find a cool job', 'With good salary');
+    const ex = document.getElementById('example');
+    ex.remove();
 }

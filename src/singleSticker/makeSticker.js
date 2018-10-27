@@ -7,25 +7,30 @@ import currentId from './currentId';
 
 
 
-export default function makeSticker() {
+export default function makeSticker(head, body, className) {
+
     let id = currentId();
+    if (!head) { head = "Новый стикер"; }
+    if (!body) { body = ""; }
+    if (!className) { className = 'editSticker'; }
 
     let area = document.getElementById('stickyNotes');
-    const wrap = makeDOMelement('div', 'editSticker', '', id);
+    const wrap = makeDOMelement('div', className, '', id);
     const fragment = document.createDocumentFragment();
 
     fragment.appendChild(addMiniSigns(id));
-    fragment.appendChild(makeDOMelement('h1', '', 'Новый стикер')); // adding headline
-    fragment.appendChild(makeDOMelement('p', '', ''));
+    fragment.appendChild(makeDOMelement('h1', '', head)); // adding headline
+    fragment.appendChild(makeDOMelement('p', '', body));
     wrap.appendChild(fragment);
 
     area.appendChild(wrap);
 
     document.getElementById(id).setAttribute('data-action', 'sticker');
-    // document.getElementById(id).setAttribute('draggable', 'true');
+    if (className === "editSticker") { editSticker(id); }
+    //document.getElementById(id).setAttribute('draggable', 'true');
 
     // mouseOverOut(id);
-    editSticker(id);
+
 
 
 };
