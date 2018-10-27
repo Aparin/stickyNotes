@@ -1,4 +1,3 @@
-import out from '../out';
 import currentId from '../singleSticker/currentId';
 
 export default function sort(firstID, secondID) {

@@ -24,7 +24,7 @@ export default function example() {
     makeSticker('Learn Node.JS', 'And develop multi-user services', 'newSticker');
     makeSticker('Новый стикер', '', 'newSticker');
     makeSticker('Новый стикер', '', 'newSticker');
-    makeSticker('To find a cool job', 'With good salary');
+    makeSticker('To find a cool job', 'With good salary', 'newSticker');
     const ex = document.getElementById('example');
     ex.remove();
 }
