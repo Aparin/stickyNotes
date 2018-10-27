@@ -31,8 +31,9 @@ export default function listeners() {
         let target = e.target;
         while (target != document) {
             const dataAction = target.getAttribute('data-action');
+            const style = target.getAttribute('class');
             if (dataAction == 'edit' || dataAction == 'delete' || dataAction == 'ok' || dataAction == 'close') { return }
-            if (dataAction == 'sticker') {
+            if (dataAction == 'sticker' && style != 'editSticker') {
                 if (event.which == 1) moveTheSticker(target.id);
                 return;
             }
