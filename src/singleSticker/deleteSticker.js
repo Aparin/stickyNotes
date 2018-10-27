@@ -1,5 +1,3 @@
-import out from '../out';
-
 export default function deleteSticker(id) {
     document.getElementById(id).remove();
 

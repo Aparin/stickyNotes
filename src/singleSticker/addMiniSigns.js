@@ -1,5 +1,5 @@
 export default function addMiniSigns() {
-    var fragment = document.createDocumentFragment();
+    const fragment = document.createDocumentFragment();
 
     const edit = document.createElement('img');
     edit.src = 'img/edit_14x10.png';

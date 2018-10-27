@@ -1,4 +1,4 @@
-import out from '../out';
+// import out from '../out';
 import addMiniSigns from './addMiniSigns';
 
 export default function editSticker(id) {
@@ -8,12 +8,14 @@ export default function editSticker(id) {
     let head = sticker.querySelector('h1').textContent;
     let body = sticker.querySelector('p').textContent;
     sticker.innerHTML = `    
-    <img src="img/edit_10.png" class="editBig" title="Закрыть без сохранения" data-action="close">
-    <img src="img/save_18.png" class="editBig" title="Применить изменения" data-action="ok">
+    <img src="img/edit_10.png" class="editBig" title="Закрыть без изменений" 
+    data-action="close">
+    <img src="img/save_18.png" class="editBig" title="Применить изменения" 
+    data-action="ok">
     <input type="text" style="width:250px" draggable="false" value="${head}">
     <br />	
-    <textarea style="width: 285px; height:260px;  margin: 3px; border: 0px;" name="textArea">${body}</textarea>`;
-
+    <textarea style="width: 285px; height:260px;  margin: 3px; border: 0px;" 
+    name="textArea">${body}</textarea>`;
 
     sticker.onclick = function(e) {
         const target = e.target;
@@ -21,7 +23,6 @@ export default function editSticker(id) {
         if (action == 'ok') {
             head = sticker.getElementsByTagName('input')[0].value;
             body = sticker.getElementsByTagName('textArea')[0].value;
-
 
             sticker.innerHTML = '';
             sticker.className = 'newSticker'
@@ -35,7 +36,5 @@ export default function editSticker(id) {
             sticker.appendChild(addMiniSigns());
             sticker.innerHTML += `<h1>${head}</h1><p>${body}</p>`
         }
-
     };
-
 }

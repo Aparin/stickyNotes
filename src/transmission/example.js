@@ -19,6 +19,7 @@ export default function example() {
     }
     httpGet(url);
     */
+    alert("Стикеры можно менять местами.")
     makeSticker('Become an expert in JavaScript', 'As soon as posible', 'newSticker');
     makeSticker('Learn React', 'On middle level', 'newSticker');
     makeSticker('Learn Node.JS', 'And develop multi-user services', 'newSticker');
