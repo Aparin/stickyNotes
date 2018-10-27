@@ -21,6 +21,7 @@ export default function example() {
     */
     makeSticker('Become an expert in JavaScript', 'As soon as posible', 'newSticker');
     makeSticker('Learn React', 'On middle level', 'newSticker');
+    makeSticker('Learn Node.JS', 'And develop multi-user services', 'newSticker');
     makeSticker('Новый стикер', '', 'newSticker');
     makeSticker('Новый стикер', '', 'newSticker');
     makeSticker('To find a cool job', 'With good salary');
