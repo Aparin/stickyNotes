@@ -1,22 +1,18 @@
-import out from '../out';
+// import out from '../out';
 import sort from '../allStickers/sort';
 
 export default function moveTheSticker(id) {
     const sticker = document.getElementById(id);
     sticker.style.position = 'absolute';
 
-
     function moveSticker(e) {
         sticker.style.left = e.pageX - sticker.offsetWidth / 2 + 'px';
         sticker.style.top = e.pageY - sticker.offsetHeight / 2 + 'px';
+    }
 
-    }
-    sticker.onmousemove = function(e) {
-        moveSticker(e);
-    }
-    sticker.ondragstart = function() {
-        return false;
-    };
+    sticker.onmousemove = function(e) { moveSticker(e); }
+    sticker.ondragstart = function() { return false; };
+
     sticker.onmouseup = function(e) {
         sticker.onmousemove = null;
         sticker.onmouseup = null;
@@ -27,17 +23,13 @@ export default function moveTheSticker(id) {
 
         function surfacing(elem) {
             while (elem != document) {
-
                 const dataAction = elem.getAttribute('data-action');
-
-                if (dataAction == 'sticker') {
-                    return (elem.id);
-                }
+                if (dataAction == 'sticker') { return (elem.id); }
                 elem = elem.parentNode;
             }
         }
+
         const next = document.elementFromPoint(e.pageX, e.pageY);
         sort(id, surfacing(next));
-
     }
 }

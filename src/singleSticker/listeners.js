@@ -1,24 +1,23 @@
-import makeSticker from './makeSticker';
+// import out from '../out';
+
 import exmpl from '../transmission/example';
-import deleteSticker from './deleteSticker';
-import currentId from './currentId';
+import makeSticker from './makeSticker';
 import save from '../transmission/save';
-import saveToServer from '../transmission/toServer';
+import deleteSticker from './deleteSticker';
 import clear from '../allStickers/clear';
-import editSticker from './editSticker';
-import out from '../out';
+import saveToServer from '../transmission/toServer';
+
 import moveTheSticker from './moveTheSticker';
+import editSticker from './editSticker';
 
 export default function listeners() {
     example.onclick = function() { exmpl(); }
     plus.onclick = function() { makeSticker(); }
     saving.onclick = function() { save(); }
     cleaning.onclick = function() { clear(); }
-    toServer.onclick = function() {
-        saveToServer();
-    }
+    toServer.onclick = function() { saveToServer(); }
 
-    let field = document.getElementById('stickyNotes');
+    const field = document.getElementById('stickyNotes');
 
     field.onclick = function(e) {
         const target = e.target;
@@ -32,7 +31,8 @@ export default function listeners() {
         while (target != document) {
             const dataAction = target.getAttribute('data-action');
             const style = target.getAttribute('class');
-            if (dataAction == 'edit' || dataAction == 'delete' || dataAction == 'ok' || dataAction == 'close') { return }
+            if (dataAction == 'edit' || dataAction == 'delete' || dataAction == 'ok' ||
+                dataAction == 'close') { return }
             if (dataAction == 'sticker' && style != 'editSticker') {
                 if (event.which == 1) moveTheSticker(target.id);
                 return;

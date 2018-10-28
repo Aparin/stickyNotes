@@ -1,4 +1,4 @@
-import out from '../out';
+// import out from '../out';
 import currentData from './currentData.js';
 
 export default function toServer() {
@@ -8,13 +8,10 @@ export default function toServer() {
     /*
     const socket = new WebSocket("ws://miruspeha.bget.ru/stickyNotes.php");
 
-
     socket.onopen = function() {
         out("Соединение установлено. ");
         socket.send(localStickers);
     };
-
-
 
     socket.onclose = function(event) {
         if (event.wasClean) {
@@ -33,6 +30,7 @@ export default function toServer() {
         out(" Ошибка " + error.message);
     };
     */
+
     /*
         const myRequest = new Request('http://miruspeha.bget.ru/stickyNotes.php', { method: 'POST', body: localStickers });
 
@@ -43,6 +41,7 @@ export default function toServer() {
         fetch(myRequest);
         out('Request to server. Responce status: ' + response.status);
     */
+
     /*
     const server = new XMLHttpRequest();
     server.open('POST', 'http://miruspeha.bget.ru/stickyNotes.php');

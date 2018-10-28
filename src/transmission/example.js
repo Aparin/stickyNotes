@@ -19,13 +19,16 @@ export default function example() {
     }
     httpGet(url);
     */
-    alert("Стикеры можно менять местами.")
+
     makeSticker('Become an expert in JavaScript', 'As soon as posible', 'newSticker');
     makeSticker('Learn React', 'On middle level', 'newSticker');
     makeSticker('Learn Node.JS', 'And develop multi-user services', 'newSticker');
     makeSticker('Новый стикер', '', 'newSticker');
     makeSticker('Новый стикер', '', 'newSticker');
     makeSticker('To find a cool job', 'With good salary', 'newSticker');
+
     const ex = document.getElementById('example');
     ex.remove();
+
+    alert("Стикеры можно менять местами.")
 }

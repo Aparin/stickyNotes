@@ -1,14 +1,13 @@
+//import out from '../out';
+
+import currentId from './currentId';
 import makeDOMelement from './makeDOMElement';
 import editSticker from './editSticker';
-import out from '../out';
-import mouseOverOut from '../allStickers/mouseOverOut';
 import addMiniSigns from './addMiniSigns';
-import currentId from './currentId';
 
-
+// import mouseOverOut from '../allStickers/mouseOverOut';
 
 export default function makeSticker(head, body, className) {
-
     let id = currentId();
     if (!head) { head = "Новый стикер"; }
     if (!body) { body = ""; }
@@ -27,10 +26,6 @@ export default function makeSticker(head, body, className) {
 
     document.getElementById(id).setAttribute('data-action', 'sticker');
     if (className === "editSticker") { editSticker(id); }
-    //document.getElementById(id).setAttribute('draggable', 'true');
 
     // mouseOverOut(id);
-
-
-
 };
