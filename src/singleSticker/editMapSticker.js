@@ -1,10 +1,11 @@
 import out from '../out';
 import addMiniSigns from './addMiniSigns';
+import yaMap from '../transmission/yaMap';
 
-export default function editSticker(id) {
+export default function editMapSticker(x, y, id) {
     const sticker = document.getElementById(id);
 
-    sticker.className = 'editSticker';
+    sticker.className = 'editMapSticker';
     let head = sticker.querySelector('h1').textContent;
     let body = sticker.querySelector('p').textContent;
     sticker.innerHTML = `    
@@ -14,8 +15,9 @@ export default function editSticker(id) {
     data-action="ok">
     <input type="text" style="width:250px" draggable="false" value="${head}">
     <br />	
-    <textarea name="textArea">${body}</textarea>`;
-
+    <textarea name="textArea">${body}</textarea>
+    <div id='map' class='editMap'></div>`;
+    yaMap(x, y, id);
     sticker.onclick = function(e) {
         const target = e.target;
         const action = target.getAttribute('data-action');
@@ -24,15 +26,13 @@ export default function editSticker(id) {
             head = sticker.getElementsByTagName('input')[0].value;
             body = sticker.getElementsByTagName('textArea')[0].value;
             sticker.innerHTML = '';
-            if (sticker.className == 'editSticker') { sticker.className = 'newSticker'; };
-            if (sticker.className == 'editMapSticker') { sticker.className = 'mapSticker' };
+            sticker.className = 'mapSticker';
             sticker.appendChild(addMiniSigns());
             sticker.innerHTML += `<h1>${head}</h1><p>${body}</p>`;
         }
         if (action == 'close') {
             sticker.innerHTML = '';
-            if (sticker.className == 'editSticker') { sticker.className = 'newSticker' };
-            if (sticker.className == 'editMapSticker') { sticker.className = 'mapSticker' };
+            sticker.className = 'mapSticker';
             sticker.appendChild(addMiniSigns());
             sticker.innerHTML += `<h1>${head}</h1><p>${body}</p>`
         }

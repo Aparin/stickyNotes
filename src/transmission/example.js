@@ -1,4 +1,7 @@
 import makeSticker from '../singleSticker/makeSticker';
+import makeMapSticker from '../singleSticker/makeMapSticker';
+import yaMap from './yaMap';
+import currentId from '../singleSticker/currentId';
 
 export default function example() {
 
@@ -23,12 +26,14 @@ export default function example() {
     makeSticker('Become an expert in JavaScript', 'As soon as posible', 'newSticker');
     makeSticker('Learn React', 'On middle level', 'newSticker');
     makeSticker('Learn Node.JS', 'And develop multi-user services', 'newSticker');
-    makeSticker('Новый стикер', '', 'newSticker');
-    makeSticker('Новый стикер', '', 'newSticker');
     makeSticker('To find a cool job', 'With good salary', 'newSticker');
+    makeMapSticker('ВДНХ на карте', 'Посетить выставку промышленного оборудования (пищевая пром-ть; станки для бахил и т.п.)', 'editMapSticker', 55.76, 37.64);
+    //[55.76, 37.64]
+    // yaMap(55.76, 37.64, currentId() - 1);
+    // yaMap([55.76, 37.64], currentId() - 1);
 
     const ex = document.getElementById('example');
     ex.remove();
 
-    alert("Стикеры можно менять местами.")
+    // alert("Стикеры можно менять местами.")
 }

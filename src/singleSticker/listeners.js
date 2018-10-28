@@ -33,7 +33,7 @@ export default function listeners() {
             const style = target.getAttribute('class');
             if (dataAction == 'edit' || dataAction == 'delete' || dataAction == 'ok' ||
                 dataAction == 'close') { return }
-            if (dataAction == 'sticker' && style != 'editSticker') {
+            if (dataAction == 'sticker' && style != 'editSticker' && style != 'editMapSticker') {
                 if (event.which == 1) moveTheSticker(target.id);
                 return;
             }
