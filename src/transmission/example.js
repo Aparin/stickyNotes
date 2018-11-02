@@ -27,7 +27,7 @@ export default function example() {
     makeSticker('Learn React', 'On middle level', 'newSticker');
     makeSticker('Learn Node.JS', 'And develop multi-user services', 'newSticker');
     makeSticker('To find a cool job', 'With good salary', 'newSticker');
-    makeMapSticker('ВДНХ на карте', 'Посетить выставку промышленного оборудования (пищевая пром-ть; станки для бахил и т.п.)', 'editMapSticker', 55.76, 37.64);
+    makeMapSticker('ВДНХ на карте', 'Посетить выставку промышленного оборудования (пищевая пром-ть; станки для бахил и т.п.)', 'editMapSticker', 'Пр-т Мира, 119, Москва');
     //[55.76, 37.64]
     // yaMap(55.76, 37.64, currentId() - 1);
     // yaMap([55.76, 37.64], currentId() - 1);

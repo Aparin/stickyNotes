@@ -99,9 +99,16 @@ textarea {
     height: 40px;
 }
 
+input.adress {
+    width: 250px;
+    font-size: 11px;
+    margin: 2px 0px;
+    color: grey;
+}
+
 .editMap {
     width: 100%;
-    height: 220px;
+    height: 190px;
 }
 
 input {

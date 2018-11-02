@@ -9,10 +9,11 @@ import yaMap from '../transmission/yaMap';
 
 // import mouseOverOut from '../allStickers/mouseOverOut';
 
-export default function makeMapSticker(head, body, className, x, y) {
+export default function makeMapSticker(head, body, className, adress) {
     const id = currentId();
     if (!head) { head = "Новый стикер"; }
     if (!body) { body = ""; }
+
     if (!className) { className = 'editMapSticker'; }
 
     const area = document.getElementById('stickyNotes');
@@ -21,8 +22,7 @@ export default function makeMapSticker(head, body, className, x, y) {
 
     fragment.appendChild(addMiniSigns(id));
     fragment.appendChild(makeDOMelement('h1', '', head)); // adding headline
-    fragment.appendChild(makeDOMelement('span', 'x', head));
-    fragment.appendChild(makeDOMelement('span', 'y', head));
+    fragment.appendChild(makeDOMelement('span', 'adress', `Адрес: ${adress}`));
     fragment.appendChild(makeDOMelement('p', '', body));
     fragment.appendChild(makeDOMelement('div', 'editMap', '', 'map'));
     wrap.appendChild(fragment);
@@ -32,8 +32,9 @@ export default function makeMapSticker(head, body, className, x, y) {
     document.getElementById(id).setAttribute('data-action', 'sticker');
 
     if (className === "editMapSticker") {
-        editMapSticker(x, y, id);
-    } else { yaMap(x, y, id); }
+        editMapSticker(id);
+    } else { //yaMap(adress, id); 
+    }
 
     // mouseOverOut(id);
 };
