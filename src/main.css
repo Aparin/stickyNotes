@@ -100,7 +100,7 @@ textarea {
 }
 
 input.adress {
-    width: 250px;
+    width: 265px;
     font-size: 11px;
     margin: 2px 0px;
     color: grey;
@@ -132,7 +132,7 @@ textarea {
 .editBig {
     float: right;
     cursor: pointer;
-    margin: 2px;
+    margin: 3px;
 }
 
 .panel {

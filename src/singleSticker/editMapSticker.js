@@ -18,10 +18,14 @@ export default function editMapSticker(id) {
     <input type="text" style="width:250px; " draggable="false" value="${head}">
     <br />	
     <input type="text" title="Адрес: " class="adress" draggable="false" value="${adress}">
+    <img src="img/reload_18.png" class="editBig" title="Загрузить карту" 
+    data-action="reload">
     <br />	
     
     <textarea name="textArea">${body}</textarea>
-    <div id='map' class='editMap'></div>`;
+    <div id='map' class='editMap'></div>
+    `;
+
     xhrYaMap(adress, id);
     sticker.onclick = function(e) {
         const target = e.target;
@@ -40,6 +44,13 @@ export default function editMapSticker(id) {
             sticker.className = 'mapSticker';
             sticker.appendChild(addMiniSigns());
             sticker.innerHTML += `<h1>${head}</h1><p>${body}</p>`
+        }
+
+        if (action == 'reload') {
+            map.innerHTML = '';
+            adress = sticker.getElementsByTagName('input')[1].value;
+            console.log(adress);
+            xhrYaMap(adress, id);
         }
     };
 }
