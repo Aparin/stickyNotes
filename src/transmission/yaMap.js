@@ -21,6 +21,9 @@ export default function yaMap(coords) {
             // Чтобы не определять координаты центра карты вручную,
             // воспользуйтесь инструментом Определение координат.
             center: [y, x],
+            // controls: ['zoomControl', 'searchControl', 'typeSelector',  'fullscreenControl', 'routeButtonControl']
+            controls: ['zoomControl'],
+
             // Уровень масштабирования. Допустимые значения:
             // от 0 (весь мир) до 19.
             zoom: 16
