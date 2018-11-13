@@ -15,7 +15,7 @@ export default function listeners() {
     plus.onclick = function() { makeSticker(); }
     saving.onclick = function() { save(); }
     cleaning.onclick = function() { clear(); }
-    toServer.onclick = function() { saveToServer(); }
+        // toServer.onclick = function() { saveToServer(); }
 
     const field = document.getElementById('stickyNotes');
 
