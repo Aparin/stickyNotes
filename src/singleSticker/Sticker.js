@@ -2,16 +2,17 @@ import out from '../out';
 import currentId from './currentId';
 import makeDOMelement from './makeDOMElement';
 import addMiniSigns from './addMiniSigns';
+import editSticker from './editSticker';
 
 export default class Sticker {
     constructor(name = 'Новый стикер', type = 'simple', content = '') {
         this.type = type;
         this.name = name;
         this.content = content;
+        this.id = currentId();
     }
 
     create() {
-        this.id = currentId();
         const area = document.getElementById('stickyNotes');
         const wrap = makeDOMelement('div', 'newSticker', '', this.id);
         const fragment = document.createDocumentFragment();
@@ -30,18 +31,15 @@ export default class Sticker {
         document.getElementById(this.id).style = 'display: none';
     }
 
+    show() {
+        document.getElementById(this.id).style = 'display: display-block';
+    }
     mini() {
         //состояние стикера в свёрнутом виде
     }
 
-    show() {
-        return out('show');
-    }
-
-
-
     full() {
-        //состояние стикера в развёрнутом виде
+        editSticker(this.id);
     }
 
     move() {

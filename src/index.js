@@ -16,3 +16,5 @@ listeners();
 const sticker = new Sticker('Visit tte museum', '', 'Moscow, Lomonosova street, 15');
 sticker.create();
 // sticker.hide();
+// sticker.show();
+// sticker.full();
