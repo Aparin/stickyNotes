@@ -16,3 +16,13 @@ describe('makeSticker', function() {
     });
 
 });
+
+describe('Sticker', function() {
+    it('Создание нового стикера на объекте cо стандартными настройками', function() {
+        const sticker = new Sticker();
+        assert.equal(sticker, ``)
+    });
+
+
+
+});

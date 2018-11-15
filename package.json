@@ -4,7 +4,7 @@
     "description": "веб-стикеры",
     "main": "dist/main.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "tests.html",
         "babel": "babel",
         "dev": "webpack --mode development ./src/index.js --output ./dist/main.js --watch",
         "build": "webpack --mode production ./src/index.js --output ./dist/main.js --watch"
@@ -18,5 +18,9 @@
         "babel-preset-stage-0": "^6.24.1",
         "webpack": "^4.16.5",
         "webpack-cli": "^3.1.0"
+    },
+    "dependencies": {
+        "chai": "^4.2.0",
+        "mocha": "^5.2.0"
     }
 }
