@@ -11,19 +11,23 @@ export default class Sticker {
     }
 
     create() {
-        const id = currentId();
+        this.id = currentId();
         const area = document.getElementById('stickyNotes');
-        const wrap = makeDOMelement('div', 'newSticker', '', id);
+        const wrap = makeDOMelement('div', 'newSticker', '', this.id);
         const fragment = document.createDocumentFragment();
 
-        fragment.appendChild(addMiniSigns(id));
+        fragment.appendChild(addMiniSigns(this.id));
         fragment.appendChild(makeDOMelement('h1', '', this.name)); // adding headline
         fragment.appendChild(makeDOMelement('p', '', this.content));
         wrap.appendChild(fragment);
 
         area.appendChild(wrap);
 
-        document.getElementById(id).setAttribute('data-action', 'sticker');
+        document.getElementById(this.id).setAttribute('data-action', 'sticker');
+    }
+
+    hide() {
+        document.getElementById(this.id).style = 'display: none';
     }
 
     mini() {

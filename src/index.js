@@ -15,3 +15,4 @@ listeners();
 // out(calc.sum(10, 20));
 const sticker = new Sticker('Visit tte museum', '', 'Moscow, Lomonosova street, 15');
 sticker.create();
+// sticker.hide();
