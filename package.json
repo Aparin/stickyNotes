@@ -4,8 +4,8 @@
     "description": "веб-стикеры",
     "main": "dist/main.js",
     "scripts": {
-        "test": "tests.html",
-        "babel": "babel",
+        "test": "webpack --mode development ./src/tests.js --output ./dist/tests.js --watch",
+        "babel": "babel  ./src/index.js --output ./dist/main.js --watch",
         "dev": "webpack --mode development ./src/index.js --output ./dist/main.js --watch",
         "build": "webpack --mode production ./src/index.js --output ./dist/main.js --watch"
     },

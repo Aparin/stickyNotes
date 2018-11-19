@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link rel="stylesheet" type="text/css" media="screen" href="src/main.css" />
     <!-- подключаем стили Mocha, для отображения результатов -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
     <!-- подключаем библиотеку Mocha -->
@@ -21,15 +22,16 @@
 </head>
 
 <body>
-
+    <div id='stickyNotes'></div>
+    <!--
     <script src='dist/makeDOMElement.js'></script>
     <script src='dist/makeSticker.js'></script>
     <script src='dist/singleSticker/Sticker.js'></script>
 
-
+-->
 
     <!-- здесь находятся тесты -->
-    <script src="tests.js"></script>
+    <script src='dist/tests.js'></script>
 
     <!-- здесь будут будут результаты тестов -->
     <div id="mocha"></div>

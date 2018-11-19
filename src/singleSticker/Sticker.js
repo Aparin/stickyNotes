@@ -5,7 +5,7 @@ import addMiniSigns from './addMiniSigns';
 import editSticker from './editSticker';
 
 export default class Sticker {
-    constructor(name = 'Новый стикер', type = 'simple', content = '') {
+    constructor(name = 'Новый стикер', content = '', type = 'simple') {
         this.type = type;
         this.name = name;
         this.content = content;
@@ -53,4 +53,5 @@ export default class Sticker {
     addUrl() {
 
     }
+
 }
