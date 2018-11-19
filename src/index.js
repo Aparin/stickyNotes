@@ -6,8 +6,9 @@ import Sticker from './singleSticker/Sticker';
 //import Calc from '../testing/Calc'
 
 panel();
+load();
 if (localStorage.getItem('stickers')) {
-    load();
+    // load();
 }
 listeners();
 
