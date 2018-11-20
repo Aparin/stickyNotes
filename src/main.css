@@ -135,20 +135,6 @@ textarea {
     margin: 3px;
 }
 
-.panel {
-    background-color: lightgray;
-    z-index: 2000000000;
-    cursor: default;
-    padding: 4px 4px 4px 10px;
-}
-
-.symbol {
-    color: white;
-    cursor: pointer;
-    display: inline-block;
-    background: linear-gradient(to top, grey, white);
-}
-
 .mouseover {
     background: white;
 }
@@ -166,4 +152,18 @@ textarea {
 
 .edit {
     cursor: pointer;
+}
+
+
+/*--------------- Панель ---------------*/
+
+.symbol {
+    display: inline-flex;
+}
+
+#inform {
+    display: inline-flex;
+    font-size: 22px;
+    color: green;
+    margin: 8px;
 }

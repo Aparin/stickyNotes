@@ -1,12 +1,29 @@
-import makeDOMelement from '../singleSticker/makeDOMelement';
-import out from '../out';
-import xhr from './xhrYaMap';
+'use strict';
 
-export default function yaMap(coords) {
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = yaMap;
+
+var _makeDOMelement = require('../singleSticker/makeDOMelement');
+
+var _makeDOMelement2 = _interopRequireDefault(_makeDOMelement);
+
+var _out = require('../out');
+
+var _out2 = _interopRequireDefault(_out);
+
+var _xhrYaMap = require('./xhrYaMap');
+
+var _xhrYaMap2 = _interopRequireDefault(_xhrYaMap);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function yaMap(coords) {
     // console.log(coords);
-    const coordsArr = coords.split(' '); // converting string to array
-    const x = +coordsArr[0];
-    const y = +coordsArr[1];
+    var coordsArr = coords.split(' '); // converting string to array
+    var x = +coordsArr[0];
+    var y = +coordsArr[1];
     // console.log(`x= ${x}, y= ${y}`)
 
     // Функция ymaps.ready() будет вызвана, когда
@@ -15,7 +32,7 @@ export default function yaMap(coords) {
 
     function init() {
         // Создание карты.    
-        const myMap = new ymaps.Map("map", {
+        var myMap = new ymaps.Map("map", {
             // Координаты центра карты.
             // Порядок по умолчанию: «широта, долгота».
             // Чтобы не определять координаты центра карты вручную,
@@ -30,14 +47,11 @@ export default function yaMap(coords) {
         });
 
         // Создание метки 
-        const myPlacemark = new ymaps.Placemark(
-            // Координаты метки
-            [y, x],
-            //{ balloonContent: '<img src="/img/star_16.png" />' }
-        );
+        var myPlacemark = new ymaps.Placemark(
+        // Координаты метки
+        [y, x]);
 
         // Добавление метки на карту
         myMap.geoObjects.add(myPlacemark);
     }
-
 };

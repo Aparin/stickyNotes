@@ -1,5 +1,5 @@
 export default function clear() {
-    if (!localStorage.getItem('stickers')) {
+    if (!localStorage.getItem('H1')) {
         alert("Нет сохранённых стикеров, удалять нечего...");
     } else {
         const msg = 'Удалить без возможности восстановления?';
