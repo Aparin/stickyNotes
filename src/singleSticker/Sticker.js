@@ -5,11 +5,12 @@ import addMiniSigns from './addMiniSigns';
 import editSticker from './editSticker';
 
 export default class Sticker {
-    constructor(name = 'Новый стикер', content = '', type = 'simple') {
+    constructor(name = 'Новый стикер', content = '', type = 'simple', adress) {
         this.type = type;
         this.name = name;
         this.content = content;
         this.id = currentId();
+        this.adress = adress;
     }
 
     create() {
@@ -19,6 +20,11 @@ export default class Sticker {
 
         fragment.appendChild(addMiniSigns(this.id));
         fragment.appendChild(makeDOMelement('h1', '', this.name)); // adding headline
+        if (this.type === 'map') {
+            const adr = makeDOMelement('p', '', this.adress);
+            adr.id = `adress${this.id}`;
+            fragment.appendChild(adr);
+        }
         fragment.appendChild(makeDOMelement('p', '', this.content));
         wrap.appendChild(fragment);
 

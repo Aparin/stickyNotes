@@ -153,34 +153,3 @@ textarea {
 .edit {
     cursor: pointer;
 }
-
-
-/*--------------- Панель ---------------*/
-
-.button {
-    display: inline-flex;
-    border-radius: 15px;
-    border: 2px solid darkgreen;
-    padding: 5px;
-    font-size: 22px;
-    margin: 2px;
-    justify-content: center;
-    align-items: stretch;
-}
-
-.plusSign {
-    font-size: 19px;
-    padding: 0px;
-    margin: 0px;
-}
-
-.button:hover {
-    background-color: white;
-}
-
-#inform {
-    display: inline-flex;
-    font-size: 22px;
-    color: green;
-    margin: 7px;
-}

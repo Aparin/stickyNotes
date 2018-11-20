@@ -6,25 +6,24 @@ export default function editMapSticker(id) {
     const sticker = document.getElementById(id);
     sticker.className = 'editMapSticker';
     let head = sticker.querySelector('h1').textContent;
-    let body = sticker.querySelector('p').textContent;
-    let adress = sticker.querySelector('span').textContent;
-
+    let adress = sticker.getElementsByTagName('p')[0].textContent;
+    let body = sticker.getElementsByTagName('p')[1].textContent;
 
     sticker.innerHTML = `    
-    <img src="img/edit_10.png" class="editBig" title="Закрыть без изменений" 
-    data-action="close">
-    <img src="img/save_18.png" class="editBig" title="Применить изменения" 
-    data-action="ok">
-    <input type="text" style="width:250px; " draggable="false" value="${head}">
-    <br />	
-    <input type="text" title="Адрес: " class="adress" draggable="false" value="${adress}">
-    <img src="img/reload_18.png" class="editBig" title="Загрузить карту" 
-    data-action="reload">
-    <br />	
-    
-    <textarea name="textArea">${body}</textarea>
-    <div id='map' class='editMap'></div>
-    `;
+        <img src="img/edit_10.png" class="editBig" title="Закрыть без изменений" 
+        data-action="close">
+        <img src="img/save_18.png" class="editBig" title="Применить изменения" 
+        data-action="ok">
+        <input type="text" style="width:250px; " draggable="false" value="${head}">
+        <br />	
+        <input type="text" title="Адрес: " class="adress" draggable="false" value="${adress}">
+        <img src="img/reload_18.png" class="editBig" title="Загрузить карту" 
+        data-action="reload">
+        <br />	
+        
+        <textarea name="textArea">${body}</textarea>
+        <div id='map' class='editMap'></div>
+        `;
 
     xhrYaMap(adress, id);
     sticker.onclick = function(e) {
@@ -43,7 +42,7 @@ export default function editMapSticker(id) {
             sticker.innerHTML = '';
             sticker.className = 'mapSticker';
             sticker.appendChild(addMiniSigns());
-            sticker.innerHTML += `<h1>${head}</h1><p>${body}</p>`
+            sticker.innerHTML += `<h1>${head}</h1><p id="adress${id}">${adress}</p><p>${body}</p>`
         }
 
         if (action == 'reload') {

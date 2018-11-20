@@ -6,6 +6,7 @@ import clear from '../allStickers/clear';
 // import saveToServer from '../transmission/toServer';
 import moveTheSticker from './moveTheSticker';
 import editSticker from './editSticker';
+import editMapSticker from './editMapSticker';
 
 export default function listeners() {
     example.onclick = function() { exmpl(); }
@@ -25,7 +26,13 @@ export default function listeners() {
         const target = e.target;
         const action = target.getAttribute('data-action');
         if (action == 'delete') { deleteSticker(target.parentNode.id); }
-        if (action == 'edit') { editSticker(target.parentNode.id); }
+        if (action == 'edit') {
+            if (document.getElementById(`adress${target.parentNode.id}`)) {
+                editMapSticker(target.parentNode.id);
+            } else {
+                editSticker(target.parentNode.id);
+            }
+        }
     };
 
     field.addEventListener('mousedown', function(e) {

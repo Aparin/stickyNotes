@@ -1,4 +1,3 @@
-import out from '../out';
 import addMiniSigns from './addMiniSigns';
 
 export default function editSticker(id) {
@@ -13,7 +12,7 @@ export default function editSticker(id) {
     <img src="img/save_18.png" class="editBig" title="Применить изменения" 
     data-action="ok">
     <input type="text" style="width:250px" draggable="false" value="${head}">
-    <br />	
+    <br />
     <textarea name="textArea">${body}</textarea>`;
 
     sticker.onclick = function(e) {
