@@ -28,7 +28,7 @@ export default function yaMap(coords) {
             // от 0 (весь мир) до 19.
             zoom: 16
         });
-
+        /*
         // Создание метки 
         const myPlacemark = new ymaps.Placemark(
             // Координаты метки
@@ -38,6 +38,7 @@ export default function yaMap(coords) {
 
         // Добавление метки на карту
         myMap.geoObjects.add(myPlacemark);
+        */
     }
 
 };
