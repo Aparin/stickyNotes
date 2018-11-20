@@ -14,9 +14,9 @@ textarea {
 .newSticker {
     display: inline-block;
     vertical-align: top;
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(to top, grey, white);
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(to top, lightgrey, white);
     padding: 2px;
     margin: 2px;
     font-size: 10px;
@@ -58,9 +58,9 @@ textarea {
 .mapSticker {
     display: inline-block;
     vertical-align: top;
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(to top, grey, white);
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(to top, lightgrey, white);
     padding: 2px;
     margin: 2px;
     font-size: 10px;
@@ -157,26 +157,30 @@ textarea {
 
 /*--------------- Панель ---------------*/
 
-.symbol {
-    display: inline-flex;
-}
-
 .button {
     display: inline-flex;
     border-radius: 15px;
     border: 2px solid darkgreen;
-    padding: 7px;
-    font-size: 20px;
+    padding: 5px;
+    font-size: 22px;
     margin: 2px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.plusSign {
+    font-size: 19px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .button:hover {
-    background-color: lightcyan;
+    background-color: white;
 }
 
 #inform {
     display: inline-flex;
     font-size: 22px;
     color: green;
-    margin: 8px;
+    margin: 7px;
 }

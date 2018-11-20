@@ -1,8 +1,39 @@
+/*--------------- Панель ---------------*/
+
 .panel {
-    background-color: lightgray;
+    background-color: lightgrey;
     z-index: 2000000000;
     cursor: default;
     padding: 4px 4px 4px 10px;
+}
+
+.button {
+    display: inline-flex;
+    border-radius: 15px;
+    border: 2px solid darkgreen;
+    padding: 5px;
+    font-size: 22px;
+    color: darkgreen;
+    margin: 2px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.plusSign {
+    font-size: 19px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.button:hover {
+    background-color: white;
+}
+
+#inform {
+    display: inline-flex;
+    font-size: 22px;
+    color: green;
+    margin: 7px;
 }
 
 .symbol {
@@ -10,8 +41,4 @@
     cursor: pointer;
     display: inline-block;
     background: linear-gradient(to top, grey, white);
-}
-
-.menu {
-    padding: 3px;
 }

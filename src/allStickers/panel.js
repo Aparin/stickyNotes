@@ -2,13 +2,13 @@ export default function panel() {
     let panelContents = `
     <div id="panel" class="panel">
         <div id="example" class="button" title="Загрузить примеры">
-        &#8659; примеры</div>
+        Примеры</div>
 
         <div id="plus" class="button" title="Добавить стикер">
-        ➕ стикер</div>
+        <span class="plusSign">➕&nbsp</span>стикер</div>
 
         <div id="plusMap" class="button" title="Добавить стикер-карту">
-        ➕ карта</div>
+        <span class="plusSign">➕&nbsp</span>карта</div>
 
         <div id="saving" class="button" title="Сохранить  всё">
         Сохранить</div>    
