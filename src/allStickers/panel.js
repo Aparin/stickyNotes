@@ -1,23 +1,24 @@
 export default function panel() {
     let panelContents = `
     <div id="panel" class="panel">
-        <div id="example" class="symbol" style="border: 2px solid green; 
-        padding: 2px; margin-right:4px;" title="Загрузить примеры">
-        <img src="img/example_32.png"></div>
+        <div id="example" class="button" title="Загрузить примеры">
+        &#8659; примеры</div>
 
-        <div id="plus" class="symbol" title="Добавить стикер">
-        <img src="img/plus_32.png"></div>
+        <div id="plus" class="button" title="Добавить стикер">
+        ➕ стикер</div>
 
-        <div id="saving" class="symbol" title="Сохранить всё">
-        <img src="img/save_32.png"></div>    
+        <div id="plusMap" class="button" title="Добавить стикер-карту">
+        ➕ карта</div>
 
+        <div id="saving" class="button" title="Сохранить  всё">
+        Сохранить</div>    
         <!--
-        <div id="toServer" class="symbol" title="Сохранить на сервер">
+        <div id="toServer" class="button" title="Сохранить на сервер">
         <img src="img/toServer_32.png"></div>    
         -->
          
-        <div id="cleaning" class="symbol" title="Удалить всё">
-        <img src="img/clear_32.png"></div>
+        <div id="cleaning" class="button" title="Удалить  всё">
+        Удалить</div>
         <div id='inform'></div>
     </div>`;
 
