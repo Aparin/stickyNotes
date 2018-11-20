@@ -8,7 +8,7 @@ import Sticker from './singleSticker/Sticker';
 panel();
 load();
 if (localStorage.getItem('stickers')) {
-    // load();
+    load();
 }
 listeners();
 

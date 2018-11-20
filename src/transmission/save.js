@@ -1,4 +1,6 @@
+import message from '../view/message';
 export default function save() {
+    localStorage.clear();
     for (let id = 1; true; id++) {
         let sticker = document.getElementById(id);
         if (!sticker === false) {
@@ -6,4 +8,5 @@ export default function save() {
             localStorage.setItem(`C${id}`, sticker.getElementsByTagName('p')[0].textContent);
         } else { break; }
     }
+    message(`Сохранено`);
 }

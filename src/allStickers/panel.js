@@ -18,6 +18,7 @@ export default function panel() {
          
         <div id="cleaning" class="symbol" title="Удалить всё">
         <img src="img/clear_32.png"></div>
+        <div id='inform'></div>
     </div>`;
 
     document.getElementById('stickyNotes').insertAdjacentHTML('beforeend', panelContents);

@@ -153,3 +153,17 @@ textarea {
 .edit {
     cursor: pointer;
 }
+
+
+/*--------------- Панель ---------------*/
+
+.symbol {
+    display: inline-flex;
+}
+
+#inform {
+    display: inline-flex;
+    font-size: 22px;
+    color: green;
+    margin: 8px;
+}
