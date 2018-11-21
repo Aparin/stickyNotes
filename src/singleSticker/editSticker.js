@@ -11,9 +11,9 @@ export default function editSticker(id) {
     data-action="close">
     <img src="img/save_18.png" class="editBig" title="Применить изменения" 
     data-action="ok">
-    <input type="text" style="width:250px" draggable="false" value="${head}">
+    <input type="text" style="width:250px" draggable="false" value="${head}" placeholder="Введите заголовок">
     <br />
-    <textarea name="textArea">${body}</textarea>`;
+    <textarea name="textArea" placeholder="Место для заметок">${body}</textarea>`;
 
     sticker.onclick = function(e) {
         const target = e.target;

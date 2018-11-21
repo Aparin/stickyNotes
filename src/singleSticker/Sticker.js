@@ -6,7 +6,7 @@ import editSticker from './editSticker';
 import editMapSticker from './editMapSticker';
 
 export default class Sticker {
-    constructor(name = 'Новый стикер', content = '', type = 'simple', adress) {
+    constructor(name = '', content = '', type = 'simple', adress) {
         this.type = type;
         this.name = name;
         this.content = content;
@@ -62,5 +62,4 @@ export default class Sticker {
     addUrl() {
 
     }
-
 }
