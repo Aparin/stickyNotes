@@ -1,4 +1,3 @@
-// import out from '../out';
 import sort from '../allStickers/sort';
 
 export default function moveTheSticker(id) {

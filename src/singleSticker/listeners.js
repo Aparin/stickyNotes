@@ -3,7 +3,6 @@ import Sticker from '../singleSticker/Sticker';
 import save from '../transmission/save';
 import deleteSticker from './deleteSticker';
 import clear from '../allStickers/clear';
-// import saveToServer from '../transmission/toServer';
 import moveTheSticker from './moveTheSticker';
 import editSticker from './editSticker';
 import editMapSticker from './editMapSticker';
@@ -17,8 +16,6 @@ export default function listeners() {
     }
     saving.onclick = function() { save(); }
     cleaning.onclick = function() { clear(); }
-
-    // toServer.onclick = function() { saveToServer(); }
 
     const field = document.getElementById('stickyNotes');
 
