@@ -14,6 +14,11 @@ export default function listeners() {
         sticker.create();
         sticker.full();
     }
+    plusMap.onclick = function() {
+        const sticker = new Sticker('', '', 'map');
+        sticker.create();
+        sticker.full();
+    }
     saving.onclick = function() { save(); }
     cleaning.onclick = function() { clear(); }
 

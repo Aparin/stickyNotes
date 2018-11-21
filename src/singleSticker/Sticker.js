@@ -3,6 +3,7 @@ import currentId from './currentId';
 import makeDOMelement from './makeDOMElement';
 import addMiniSigns from './addMiniSigns';
 import editSticker from './editSticker';
+import editMapSticker from './editMapSticker';
 
 export default class Sticker {
     constructor(name = 'Новый стикер', content = '', type = 'simple', adress) {
@@ -27,9 +28,7 @@ export default class Sticker {
         }
         fragment.appendChild(makeDOMelement('p', '', this.content));
         wrap.appendChild(fragment);
-
         area.appendChild(wrap);
-
         document.getElementById(this.id).setAttribute('data-action', 'sticker');
     }
 
@@ -45,7 +44,11 @@ export default class Sticker {
     }
 
     full() {
-        editSticker(this.id);
+        if (this.type === 'map') {
+            editMapSticker(this.id);
+        } else {
+            editSticker(this.id);
+        }
     }
 
     move() {

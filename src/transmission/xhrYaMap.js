@@ -1,4 +1,4 @@
-import out from '../out';
+import message from '../view/message';
 import yaMap from './yaMap';
 export default function xhrYaMap(adress, id) {
     function xhr(adress) {
@@ -8,9 +8,12 @@ export default function xhrYaMap(adress, id) {
             obj = obj.response; // {GeoObjectCollection: {…}}
             obj = obj.GeoObjectCollection; // {metaDataProperty: {…}, featureMember: Array(1)}
             obj = obj.featureMember[0]; // GeoObject: {metaDataProperty: {…}, boundedBy: {…}, Point: {…}}
+            if (obj === undefined) {
+                message('Адрес не найден', 'red');
+                return;
+            }
             obj = obj.GeoObject.Point; // {pos: "37.620555 55.741333"}
             const coords = obj.pos; // 37.620555 55.741333
-            // console.log(coords);
             return coords;
         }
 

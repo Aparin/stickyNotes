@@ -3,11 +3,10 @@ import out from '../out';
 import xhr from './xhrYaMap';
 
 export default function yaMap(coords) {
-    // console.log(coords);
+    if (!coords) { return };
     const coordsArr = coords.split(' '); // converting string to array
     const x = +coordsArr[0];
     const y = +coordsArr[1];
-    // console.log(`x= ${x}, y= ${y}`)
 
     // Функция ymaps.ready() будет вызвана, когда
     // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
