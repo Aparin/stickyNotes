@@ -9,7 +9,7 @@ export default function xhrYaMap(adress, id) {
             obj = obj.GeoObjectCollection; // {metaDataProperty: {…}, featureMember: Array(1)}
             obj = obj.featureMember[0]; // GeoObject: {metaDataProperty: {…}, boundedBy: {…}, Point: {…}}
             if (obj === undefined) {
-                message('Адрес не найден', 'red');
+                message('Адрес не найден', 'red', 3000);
                 return;
             }
             obj = obj.GeoObject.Point; // {pos: "37.620555 55.741333"}
