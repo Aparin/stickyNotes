@@ -21,6 +21,8 @@
     },
     "dependencies": {
         "chai": "^4.2.0",
-        "mocha": "^5.2.0"
+        "css-loader": "^1.0.1",
+        "mocha": "^5.2.0",
+        "style-loader": "^0.23.1"
     }
 }
