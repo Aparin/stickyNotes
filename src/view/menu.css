@@ -20,13 +20,14 @@
 }
 
 .plusSign {
-    font-size: 19px;
+    font-size: 16px;
     padding: 0px;
     margin: 0px;
 }
 
 .button:hover {
     background-color: white;
+    margin: 3px 0px;
 }
 
 #inform {

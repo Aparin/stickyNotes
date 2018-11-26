@@ -5,5 +5,5 @@
 
 Текущая версия: https://aparin.github.io/stickyNotes/
 
-![](https://raw.githubusercontent.com/Aparin/stickyNotes/master/img/screenshort.png)
+![](https://raw.githubusercontent.com/Aparin/stickyNotes/master/src/img/screenshort.png)
 

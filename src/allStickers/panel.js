@@ -1,23 +1,20 @@
 export default function panel() {
     let panelContents = `
     <div id="panel" class="panel">
-        <div id="example" class="button" title="Загрузить примеры">
+
+        <div id="example" class="button btn btn-success pull-left" title="Загрузить примеры">
         Примеры</div>
 
-        <div id="plus" class="button" title="Добавить стикер">
+        <div id="plus" class="button btn btn-success pull-left" title="Добавить стикер">
         <span class="plusSign">➕&nbsp</span>стикер</div>
 
-        <div id="plusMap" class="button" title="Добавить стикер-карту">
+        <div id="plusMap" class="button btn btn-success pull-left" title="Добавить стикер-карту">
         <span class="plusSign">➕&nbsp</span>карта</div>
 
-        <div id="saving" class="button" title="Сохранить  всё">
+        <div id="saving" class="button btn btn-success pull-left" title="Сохранить  всё">
         Сохранить</div>    
-        <!--
-        <div id="toServer" class="button" title="Сохранить на сервер">
-        <img src="img/toServer_32.png"></div>    
-        -->
-         
-        <div id="cleaning" class="button" title="Удалить  всё">
+ 
+        <div id="cleaning" class="button btn btn-success pull-left" title="Удалить  всё">
         Удалить</div>
         <div id='inform'></div>
     </div>`;
