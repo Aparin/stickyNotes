@@ -1,9 +1,9 @@
 import out from '../out';
-import currentId from './currentId';
-import makeDOMelement from './makeDOMElement';
-import addMiniSigns from './addMiniSigns';
-import editSticker from './editSticker';
-import editMapSticker from './editMapSticker';
+import currentId from '../singleSticker/currentId';
+import makeDOMelement from '../singleSticker/makeDOMElement';
+import addMiniSigns from '../singleSticker/addMiniSigns';
+import editSticker from '../singleSticker/editSticker';
+import editMapSticker from '../singleSticker/editMapSticker';
 
 export default class Sticker {
     constructor(name = '', content = '', type = 'simple', adress) {

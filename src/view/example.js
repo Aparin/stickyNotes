@@ -1,4 +1,4 @@
-import Sticker from '../singleSticker/Sticker';
+import Sticker from '../model/Sticker';
 
 export default function example() {
     const makeSticker = (title, content, type, adress) => {

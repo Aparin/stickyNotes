@@ -1,4 +1,4 @@
-import Sticker from '../singleSticker/Sticker';
+import Sticker from '../model/Sticker';
 
 export default function load() {
     for (let i = 1; localStorage.getItem(`H${i}`); i++) {

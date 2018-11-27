@@ -1,4 +1,4 @@
-import sort from '../allStickers/sort';
+import sort from '../../allStickers/sort';
 
 export default function moveTheSticker(id) {
     const sticker = document.getElementById(id);

@@ -1,8 +1,8 @@
-import panel from './allStickers/panel';
+import menu from './view/menu/menu';
 import load from './transmission/load';
-import listeners from './singleSticker/listeners';
+import listeners from './control/listeners';
 
-panel();
+menu();
 load();
 if (localStorage.getItem('stickers')) {
     load();
