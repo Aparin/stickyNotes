@@ -1,7 +1,3 @@
-import makeDOMelement from '../singleSticker/makeDOMelement';
-import out from '../out';
-import xhr from './xhrYaMap';
-
 export default function yaMap(coords) {
     if (!coords) { return };
     const coordsArr = coords.split(' '); // converting string to array
@@ -22,7 +18,6 @@ export default function yaMap(coords) {
             center: [y, x],
             // controls: ['zoomControl', 'searchControl', 'typeSelector',  'fullscreenControl', 'routeButtonControl']
             controls: ['zoomControl'],
-
             // Уровень масштабирования. Допустимые значения:
             // от 0 (весь мир) до 19.
             zoom: 16
@@ -34,10 +29,8 @@ export default function yaMap(coords) {
             [y, x],
             //{ balloonContent: '<img src="/img/star_16.png" />' }
         );
-
         // Добавление метки на карту
         myMap.geoObjects.add(myPlacemark);
         */
     }
-
 };

@@ -1,5 +1,5 @@
 import message from '../view/message';
-import yaMap from './yaMap';
+import yaMap from '../view/yaMap';
 export default function xhrYaMap(adress, id) {
     function xhr(adress) {
         const request = (resp) => {

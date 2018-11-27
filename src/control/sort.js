@@ -1,4 +1,4 @@
-import currentId from '../singleSticker/currentId';
+import currentId from '../model/currentId';
 
 export default function sort(firstID, secondID) {
 

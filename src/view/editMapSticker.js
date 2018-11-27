@@ -1,6 +1,5 @@
-import out from '../out';
-import addMiniSigns from './addMiniSigns';
-import xhrYaMap from '../transmission/xhrYaMap';
+import addMiniSigns from '../model/addMiniSigns';
+import xhrYaMap from '../control/xhrYaMap';
 
 export default function editMapSticker(id) {
     const sticker = document.getElementById(id);

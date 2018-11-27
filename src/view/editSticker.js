@@ -1,4 +1,4 @@
-import addMiniSigns from './addMiniSigns';
+import addMiniSigns from '../model/addMiniSigns';
 
 export default function editSticker(id) {
     const sticker = document.getElementById(id);

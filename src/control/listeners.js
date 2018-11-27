@@ -1,11 +1,11 @@
 import exmpl from '../view/example';
 import Sticker from '../model/Sticker';
-import save from '../transmission/save';
-import deleteSticker from '../singleSticker/deleteSticker';
-import clear from '../allStickers/clear';
-import moveTheSticker from '../control/sticker/moveTheSticker';
-import editSticker from '../singleSticker/editSticker';
-import editMapSticker from '../singleSticker/editMapSticker';
+import save from './save';
+import deleteSticker from '../view/deleteSticker';
+import clear from './clear';
+import moveTheSticker from './moveTheSticker';
+import editSticker from '../view/editSticker';
+import editMapSticker from '../view/editMapSticker';
 
 export default function listeners() {
     example.onclick = function() { exmpl(); }
