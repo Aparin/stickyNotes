@@ -1,4 +1,4 @@
-import message from '../view/message';
+import message from '../view/message/message';
 export default function save() {
     localStorage.clear();
     for (let id = 1; true; id++) {

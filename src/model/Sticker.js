@@ -1,7 +1,7 @@
 import currentId from './currentId';
 import makeDOMelement from './makeDOMElement';
 import addMiniSigns from './addMiniSigns';
-import editSticker from '../view/editSticker';
+import editSticker from '../view/editSticker/editSticker';
 import editMapSticker from '../view/editMapSticker';
 
 export default class Sticker {

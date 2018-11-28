@@ -1,0 +1,38 @@
+.editSticker {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border: 1px dotted darkgreen;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12px;
+    padding: 4px;
+}
+
+.editSticker textarea {
+    height: 255px;
+}
+
+.editSticker h1 {
+    font-size: 14px;
+    line-height: 14px;
+    color: darkgreen;
+}
+
+textarea {
+    width: 285px;
+    height: auto;
+    margin: 3px;
+    border: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 5px;
+    background-color: lightyellow;
+}
+
+input {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 2px;
+    color: darkgreen;
+    font-size: 16px;
+    font-weight: 700;
+}

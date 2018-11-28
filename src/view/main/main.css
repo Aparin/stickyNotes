@@ -9,6 +9,17 @@ textarea {
     height: auto;
     margin: 3px;
     border: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 5px;
+    background-color: lightyellow;
+}
+
+input {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 2px;
+    color: darkgreen;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .newSticker {
@@ -33,27 +44,6 @@ textarea {
     line-height: 12px;
     color: darkgreen;
     margin-bottom: 12px;
-}
-
-.editSticker {
-    display: inline-block;
-    width: 300px;
-    height: 300px;
-    background-color: white;
-    border: 1px dotted darkgreen;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 12px;
-    padding: 4px;
-}
-
-.editSticker textarea {
-    height: 260px;
-}
-
-.editSticker h1 {
-    font-size: 14px;
-    line-height: 14px;
-    color: darkgreen;
 }
 
 .mapSticker {
@@ -110,20 +100,6 @@ input.adress {
 .editMap {
     width: 100%;
     height: 300px;
-}
-
-input {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 2px;
-    color: darkgreen;
-    font-size: 16px;
-    font-weight: 700;
-}
-
-textarea {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 5px;
-    background-color: lightyellow;
 }
 
 .editMini {

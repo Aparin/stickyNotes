@@ -4,7 +4,7 @@ import save from './save';
 import deleteSticker from '../view/deleteSticker';
 import clear from './clear';
 import moveTheSticker from './moveTheSticker';
-import editSticker from '../view/editSticker';
+import editSticker from '../view/editSticker/editSticker';
 import editMapSticker from '../view/editMapSticker';
 
 export default function listeners() {

@@ -1,4 +1,4 @@
-import message from '../view/message';
+import message from '../view/message/message';
 import yaMap from '../view/yaMap';
 export default function xhrYaMap(adress, id) {
     function xhr(adress) {

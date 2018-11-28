@@ -17,13 +17,6 @@
     margin: 0px;
 }
 
-#inform {
-    display: inline-flex;
-    font-size: 22px;
-    color: green;
-    margin: 7px;
-}
-
 .symbol {
     color: white;
     cursor: pointer;
