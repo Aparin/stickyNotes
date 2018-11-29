@@ -4,6 +4,10 @@ export default function editSticker(id) {
     const sticker = document.getElementById(id);
 
     sticker.className = 'editSticker';
+    // const heigth = (getComputedStyle(sticker).height).replace('px', '') / 2;
+    // const width = (getComputedStyle(sticker).width).replace('px', '') / 2;
+    // console.log(heigth, width);
+
     let head = sticker.querySelector('h1').textContent;
     let body = sticker.querySelector('p').textContent;
     sticker.innerHTML = `    

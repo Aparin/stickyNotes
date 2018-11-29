@@ -37,6 +37,7 @@ input {
     z-index: 1;
     overflow: hidden;
     cursor: move;
+    outline-width: 0px;
 }
 
 .newSticker h1 {
