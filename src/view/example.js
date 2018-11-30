@@ -2,7 +2,7 @@ import Sticker from '../model/Sticker';
 
 export default function example() {
     const makeSticker = (title, content, type, adress) => {
-        const sticker = new Sticker(title, content, type, adress);
+        const sticker = new Sticker({ title, content, type, adress });
         sticker.create();
         sticker.show();
     }

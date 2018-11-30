@@ -3,29 +3,41 @@ import makeDOMelement from './makeDOMElement';
 import addMiniSigns from './addMiniSigns';
 import editSticker from '../view/editSticker/editSticker';
 import editMapSticker from '../view/editMapSticker';
+import objects from './objects';
 
 export default class Sticker {
-    constructor(name = '', content = '', type = 'simple', adress) {
-        this.type = type;
-        this.name = name;
+    constructor({ title = '', content = '', type = '', keyWords = '', adress = '' }) {
+        this.title = title;
         this.content = content;
-        this.id = currentId();
+        this.type = type;
         this.adress = adress;
+        this.keyWords = keyWords;
+        this.id = currentId();
     }
 
     create() {
+        objects.add({
+            title: this.title,
+            content: this.content,
+            type: this.type,
+            keyWords: this.keyWords,
+            adress: this.adress,
+            id: this.id
+        })
+
         const area = document.getElementById('stickyNotes');
         const wrap = makeDOMelement('div', 'newSticker', '', this.id);
         const fragment = document.createDocumentFragment();
 
         fragment.appendChild(addMiniSigns(this.id));
-        fragment.appendChild(makeDOMelement('h1', '', this.name)); // adding headline
+        fragment.appendChild(makeDOMelement('h1', '', this.title));
+        /*
         if (this.type === 'map') {
             const adr = makeDOMelement('p', '', this.adress);
-            adr.id = `adress${this.id}`;
             fragment.appendChild(adr);
         }
         fragment.appendChild(makeDOMelement('p', '', this.content));
+        fragment.appendChild(makeDOMelement('p', '', ''));*/
         wrap.appendChild(fragment);
         area.appendChild(wrap);
         document.getElementById(this.id).setAttribute('data-action', 'sticker');

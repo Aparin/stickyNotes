@@ -1,12 +1,12 @@
 .editSticker {
     display: inline-block;
     width: 300px;
-    height: 300px;
+    height: 320px;
     background-color: white;
     border: 1px dotted darkgreen;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 12px;
-    padding: 4px;
+    padding: 3px;
     z-index: 3;
     position: absolute;
     outline-width: 2px;
@@ -40,4 +40,14 @@ input {
     color: darkgreen;
     font-size: 16px;
     font-weight: 700;
+}
+
+input.keyWords {
+    background-color: white;
+    height: 15px;
+    width: 100%;
+    font-size: 11px;
+    color: gray;
+    font-weight: normal;
+    font-family: Georgia;
 }

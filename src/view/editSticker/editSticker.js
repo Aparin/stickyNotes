@@ -1,23 +1,25 @@
 import addMiniSigns from '../../model/addMiniSigns';
+import objects from '../../model/objects';
 
 export default function editSticker(id) {
     const sticker = document.getElementById(id);
-
     sticker.className = 'editSticker';
-    // const heigth = (getComputedStyle(sticker).height).replace('px', '') / 2;
-    // const width = (getComputedStyle(sticker).width).replace('px', '') / 2;
-    // console.log(heigth, width);
+    const el = objects.getElement(id);
 
-    let head = sticker.querySelector('h1').textContent;
-    let body = sticker.querySelector('p').textContent;
+    let title = el.title;
+    let content = el.content;
+    let keyWords = el.keyWords;
+    //let adress = el.adress;
+
     sticker.innerHTML = `    
     <img src="img/edit_10.png" class="editBig" title="Закрыть без изменений" 
     data-action="close">
     <img src="img/save_18.png" class="editBig" title="Применить изменения" 
     data-action="ok">
-    <input type="text" style="width:250px" draggable="false" value="${head}" placeholder="Введите заголовок">
+    <input type="text" style="width:250px" draggable="false" value="${title}" placeholder="Введите заголовок">
     <br />
-    <textarea name="textArea" placeholder="Место для заметок">${body}</textarea>`;
+    <textarea name="textArea" placeholder="Место для заметок">${content}</textarea>
+    <input class = "keyWords" name="keyWords" placeholder="Введите теги через запятую" value="${keyWords}">`;
 
     sticker.onclick = function(e) {
         const target = e.target;
@@ -26,11 +28,12 @@ export default function editSticker(id) {
         if (action == 'ok') {
             head = sticker.getElementsByTagName('input')[0].value;
             body = sticker.getElementsByTagName('textArea')[0].value;
+            keyWords = sticker.getElementsByTagName('input')[1].value;
             sticker.innerHTML = '';
             if (sticker.className == 'editSticker') { sticker.className = 'newSticker'; };
             if (sticker.className == 'editMapSticker') { sticker.className = 'mapSticker' };
             sticker.appendChild(addMiniSigns());
-            sticker.innerHTML += `<h1>${head}</h1><p>${body}</p>`;
+            sticker.innerHTML += `<h1>${head}</h1><p>${body}</p><p>${keyWords}</p>`;
         }
         if (action == 'close') {
             sticker.innerHTML = '';
