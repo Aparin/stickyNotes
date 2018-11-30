@@ -9,6 +9,9 @@ const objects = {
     },
     getElement(id) {
         return this.arr[id - 1];
+    },
+    setElenent(id, obj) {
+        this.arr[id - 1] = obj;
     }
 }
 

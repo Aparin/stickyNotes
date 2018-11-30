@@ -26,21 +26,24 @@ export default function editSticker(id) {
         const action = target.getAttribute('data-action');
 
         if (action == 'ok') {
-            head = sticker.getElementsByTagName('input')[0].value;
-            body = sticker.getElementsByTagName('textArea')[0].value;
+            title = sticker.getElementsByTagName('input')[0].value;
+            content = sticker.getElementsByTagName('textArea')[0].value;
             keyWords = sticker.getElementsByTagName('input')[1].value;
+            objects.setElenent(id, { title, content, keyWords });
+            console.log(objects.getElement(id));
+
             sticker.innerHTML = '';
             if (sticker.className == 'editSticker') { sticker.className = 'newSticker'; };
             if (sticker.className == 'editMapSticker') { sticker.className = 'mapSticker' };
             sticker.appendChild(addMiniSigns());
-            sticker.innerHTML += `<h1>${head}</h1><p>${body}</p><p>${keyWords}</p>`;
+            sticker.innerHTML += `<h1>${title}</h1>`;
         }
         if (action == 'close') {
             sticker.innerHTML = '';
             if (sticker.className == 'editSticker') { sticker.className = 'newSticker' };
             if (sticker.className == 'editMapSticker') { sticker.className = 'mapSticker' };
             sticker.appendChild(addMiniSigns());
-            sticker.innerHTML += `<h1>${head}</h1><p>${body}</p>`
+            sticker.innerHTML += `<h1>${title}</h1>`
         }
     };
 }

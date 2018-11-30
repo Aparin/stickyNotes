@@ -6,10 +6,9 @@ import editMapSticker from '../view/editMapSticker';
 import objects from './objects';
 
 export default class Sticker {
-    constructor({ title = '', content = '', type = '', keyWords = '', adress = '' }) {
+    constructor({ title = '', content = '', keyWords = '', adress = '' }) {
         this.title = title;
         this.content = content;
-        this.type = type;
         this.adress = adress;
         this.keyWords = keyWords;
         this.id = currentId();
