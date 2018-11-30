@@ -238,7 +238,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconst objects = {\r\n    arr: [],\r\n\r\n    set(objs) {\r\n        this.arr = objs;\r\n    },\r\n\r\n    get() {\r\n        return this.arr;\r\n    },\r\n\r\n    add(obj) {\r\n        this.arr.push(obj)\r\n    },\r\n\r\n    getElement(id) {\r\n        return this.arr[id - 1];\r\n    },\r\n\r\n    setElenent(id, obj) {\r\n        this.arr[id - 1] = obj;\r\n    }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (objects);\n\n//# sourceURL=webpack:///./src/model/objects.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconst objects = {\r\n    arr: [],\r\n\r\n    // all stickers\r\n    set(objs) {\r\n        this.arr = objs;\r\n    },\r\n\r\n    get() {\r\n        return this.arr;\r\n    },\r\n\r\n    // single sticker\r\n    add(obj) {\r\n        this.arr.push(obj)\r\n    },\r\n    del(id) {\r\n        this.arr.splice(id - 1, 1)\r\n    },\r\n    getElement(id) {\r\n        return this.arr[id - 1];\r\n    },\r\n\r\n    setElenent(id, obj) {\r\n        this.arr[id - 1] = obj;\r\n    }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (objects);\n\n//# sourceURL=webpack:///./src/model/objects.js?");
 
 /***/ }),
 
@@ -262,7 +262,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst testing = (arr) => {\r\
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return deleteSticker; });\nfunction deleteSticker(id) {\r\n    document.getElementById(id).remove();\r\n\r\n    for (var i = +id + 1; true; i++) {\r\n        const sticker = document.getElementById(i);\r\n\r\n        if (!sticker === false) {\r\n            sticker.id = i - 1;\r\n        } else { break; }\r\n    }\r\n    return i;\r\n}\n\n//# sourceURL=webpack:///./src/view/deleteSticker.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return deleteSticker; });\n/* harmony import */ var _model_objects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../model/objects */ \"./src/model/objects.js\");\n\r\n\r\nfunction deleteSticker(id) {\r\n\r\n    document.getElementById(id).remove();\r\n    _model_objects__WEBPACK_IMPORTED_MODULE_0__[\"default\"].del(id);\r\n\r\n    for (var i = +id + 1; true; i++) {\r\n        const sticker = document.getElementById(i);\r\n\r\n        if (!sticker === false) {\r\n            sticker.id = i - 1;\r\n        } else { break; }\r\n    }\r\n    return i;\r\n\r\n}\n\n//# sourceURL=webpack:///./src/view/deleteSticker.js?");
 
 /***/ }),
 

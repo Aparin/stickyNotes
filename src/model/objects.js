@@ -1,6 +1,7 @@
 const objects = {
     arr: [],
 
+    // all stickers
     set(objs) {
         this.arr = objs;
     },
@@ -9,10 +10,13 @@ const objects = {
         return this.arr;
     },
 
+    // single sticker
     add(obj) {
         this.arr.push(obj)
     },
-
+    del(id) {
+        this.arr.splice(id - 1, 1)
+    },
     getElement(id) {
         return this.arr[id - 1];
     },

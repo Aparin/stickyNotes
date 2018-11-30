@@ -1,5 +1,9 @@
+import objects from '../model/objects';
+
 export default function deleteSticker(id) {
+
     document.getElementById(id).remove();
+    objects.del(id);
 
     for (var i = +id + 1; true; i++) {
         const sticker = document.getElementById(i);
@@ -9,4 +13,5 @@ export default function deleteSticker(id) {
         } else { break; }
     }
     return i;
+
 }
