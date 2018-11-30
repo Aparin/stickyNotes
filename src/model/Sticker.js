@@ -18,7 +18,6 @@ export default class Sticker {
         objects.add({
             title: this.title,
             content: this.content,
-            type: this.type,
             keyWords: this.keyWords,
             adress: this.adress,
             id: this.id
