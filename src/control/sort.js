@@ -6,8 +6,6 @@ export default function sort(firstID, secondID) {
 
     objects.delElement(firstID);
     objects.insertElement(secondID, moveObj);
-    console.log(moveObj);
-    console.log(objects.get());
 
     if (secondID === undefined) { secondID = currentId() - 1; }
     if (firstID === secondID) { return };

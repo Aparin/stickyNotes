@@ -2,7 +2,7 @@ import addMiniSigns from '../../model/addMiniSigns';
 import objects from '../../model/objects';
 import xhrYaMap from '../../control/xhrYaMap';
 
-export default function editSticker(id) {
+export default function editSticker(id, type) {
     const sticker = document.getElementById(id);
     sticker.className = 'editSticker';
     const el = objects.getElement(id);
@@ -20,7 +20,7 @@ export default function editSticker(id) {
     <input type="text" style="width:250px" draggable="false" value="${title}" placeholder="Введите заголовок">
     <br />
     <textarea name="textArea" placeholder="Место для заметок">${content}</textarea>`;
-    if (adress) {
+    if (adress || type === 'map') {
         sticker.innerHTML += `  
         <input type="text" title="Адрес: " class="adress" draggable="false" value="${adress}" placeholder="Введите адрес и нажмите обновить -->">
         <img src="img/reload_18.png" class="editBig" title="Загрузить карту" 
@@ -28,7 +28,7 @@ export default function editSticker(id) {
         <div id='map' class='editMap'></div>
         `;
         sticker.className = 'editMapSticker';
-        xhrYaMap(adress, id);
+        if (adress) { xhrYaMap(adress, id) };
     }
     sticker.innerHTML += ` 
     <input class = "keyWords" name="keyWords" placeholder="Введите теги через запятую" value="${keyWords}">`;
@@ -59,6 +59,11 @@ export default function editSticker(id) {
             sticker.className = 'newSticker';
             sticker.appendChild(addMiniSigns());
             sticker.innerHTML += `<h1>${title}</h1>`
+        }
+        if (action == 'reload') {
+            map.innerHTML = '';
+            adress = sticker.getElementsByTagName('input')[1].value;
+            xhrYaMap(adress, id);
         }
     };
 }

@@ -52,9 +52,9 @@ export default class Sticker {
         //состояние стикера в свёрнутом виде
     }
 
-    full() {
-        if (this.type === 'map') {
-            editMapSticker(this.id);
+    full(type) {
+        if (type === 'map') {
+            editSticker(this.id, type);
         } else {
             editSticker(this.id);
         }
