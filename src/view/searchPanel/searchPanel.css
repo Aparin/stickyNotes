@@ -1,0 +1,20 @@
+div.searchPanel {
+    display: inline-block;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 14px;
+}
+
+span.searchPanel {
+    font-size: 12px;
+}
+
+input.check {
+    margin-left: 3px;
+}
+
+input.searchPanel {
+    font-size: 14px;
+    height: 20px;
+    margin: 1px;
+}

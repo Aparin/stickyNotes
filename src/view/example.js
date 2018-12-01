@@ -11,7 +11,7 @@ export default function example() {
     makeSticker('Learn Node.JS', 'And develop multi-user services', 'учёба');
     makeSticker('To find a cool job', 'With good salary', 'деньги');
     makeSticker('Питер, Фонтанка', '', 'путешествия', 'Питер, Фонтанка');
-    makeSticker('ВДНХ на карте', 'Посетить выставку промышленного оборудования (пищевая пром-ть; станки для бахил и т.п.)', 'деньги', 'Пр-т Мира, 119, Москва');
+    makeSticker('ВДНХ на карте', 'Посетить выставку промышленного оборудования (пищевая пром-ть; станки для бахил и т.п.)', 'бизнес', 'Пр-т Мира, 119, Москва');
 
     const ex = document.getElementById('example');
     ex.remove();

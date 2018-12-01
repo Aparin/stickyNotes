@@ -1,6 +1,8 @@
+import seacrhPanel from '../searchPanel/searchPanel';
+
 export default function panel() {
     let panelContents = `
-    <div id="panel" class="panel">
+    <div id="panel" class="panel col-lg-12">
 
         <div id="example" class="button btn btn-success pull-left" title="Загрузить примеры">
         Примеры</div>
@@ -16,8 +18,12 @@ export default function panel() {
  
         <div id="cleaning" class="button btn btn-success pull-left" title="Удалить  всё">
         Удалить</div>
+
+        ${seacrhPanel()}
+        
         <div id='inform'></div>
-    </div>`;
+    </div>
+    `;
 
     document.getElementById('stickyNotes').insertAdjacentHTML('beforeend', panelContents);
 };

@@ -310,7 +310,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return panel; });\nfunction panel() {\r\n    let panelContents = `\r\n    <div id=\"panel\" class=\"panel\">\r\n\r\n        <div id=\"example\" class=\"button btn btn-success pull-left\" title=\"Загрузить примеры\">\r\n        Примеры</div>\r\n\r\n        <div id=\"plus\" class=\"button btn btn-success pull-left\" title=\"Добавить стикер\">\r\n        <span class=\"plusSign\">➕&nbsp</span>стикер</div>\r\n\r\n        <div id=\"plusMap\" class=\"button btn btn-success pull-left\" title=\"Добавить стикер-карту\">\r\n        <span class=\"plusSign\">➕&nbsp</span>карта</div>\r\n\r\n        <div id=\"saving\" class=\"button btn btn-success pull-left\" title=\"Сохранить  всё\">\r\n        Сохранить</div>    \r\n \r\n        <div id=\"cleaning\" class=\"button btn btn-success pull-left\" title=\"Удалить  всё\">\r\n        Удалить</div>\r\n        <div id='inform'></div>\r\n    </div>`;\r\n\r\n    document.getElementById('stickyNotes').insertAdjacentHTML('beforeend', panelContents);\r\n};\n\n//# sourceURL=webpack:///./src/view/menu/menu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return panel; });\n/* harmony import */ var _searchPanel_searchPanel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../searchPanel/searchPanel */ \"./src/view/searchPanel/searchPanel.js\");\n\r\n\r\nfunction panel() {\r\n    let panelContents = `\r\n    <div id=\"panel\" class=\"panel col-lg-12\">\r\n\r\n        <div id=\"example\" class=\"button btn btn-success pull-left\" title=\"Загрузить примеры\">\r\n        Примеры</div>\r\n\r\n        <div id=\"plus\" class=\"button btn btn-success pull-left\" title=\"Добавить стикер\">\r\n        <span class=\"plusSign\">➕&nbsp</span>стикер</div>\r\n\r\n        <div id=\"plusMap\" class=\"button btn btn-success pull-left\" title=\"Добавить стикер-карту\">\r\n        <span class=\"plusSign\">➕&nbsp</span>карта</div>\r\n\r\n        <div id=\"saving\" class=\"button btn btn-success pull-left\" title=\"Сохранить  всё\">\r\n        Сохранить</div>    \r\n \r\n        <div id=\"cleaning\" class=\"button btn btn-success pull-left\" title=\"Удалить  всё\">\r\n        Удалить</div>\r\n\r\n        ${Object(_searchPanel_searchPanel__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()}\r\n        \r\n        <div id='inform'></div>\r\n    </div>\r\n    `;\r\n\r\n    document.getElementById('stickyNotes').insertAdjacentHTML('beforeend', panelContents);\r\n};\n\n//# sourceURL=webpack:///./src/view/menu/menu.js?");
 
 /***/ }),
 
@@ -323,6 +323,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\nconst message = (mess, color = 'darkgreen', time = 2000) => {\r\n    const messageField = document.getElementById('inform');\r\n    messageField.innerText = mess;\r\n    messageField.style.color = color;\r\n\r\n    function waning() {\r\n        let i = 1;\r\n        const timerId = setTimeout(function go() {\r\n            if (i > 0) setTimeout(go, time / 10);\r\n            messageField.style.opacity = i;\r\n            i = (i * 10 - 1) / 10;\r\n        }, 100);\r\n    }\r\n    waning();\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (message);\n\n//# sourceURL=webpack:///./src/view/message/message.js?");
+
+/***/ }),
+
+/***/ "./src/view/searchPanel/searchPanel.js":
+/*!*********************************************!*\
+  !*** ./src/view/searchPanel/searchPanel.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return searchPanel; });\nfunction searchPanel() {\r\n    return `\r\n    <div class='searchPanel'>\r\n    <input class=\"check\" type='checkbox'>Заголовки\r\n    <input class=\"check\" type='checkbox'>Содержимое <br />\r\n    <input class=\"searchPanel\" size=\"25\" type='text' placeholder=\"Поиск по ключевым словам\">\r\n    </div>\r\n    `;\r\n}\n\n//# sourceURL=webpack:///./src/view/searchPanel/searchPanel.js?");
 
 /***/ }),
 

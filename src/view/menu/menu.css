@@ -5,6 +5,7 @@
     z-index: 2000000000;
     cursor: default;
     padding: 4px 4px 4px 10px;
+    display: inline-flex;
 }
 
 .button {
