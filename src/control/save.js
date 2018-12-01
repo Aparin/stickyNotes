@@ -9,6 +9,7 @@ export default function save() {
         localStorage.setItem(`t${id}`, el.title);
         localStorage.setItem(`c${id}`, el.content);
         localStorage.setItem(`k${id}`, el.keyWords);
+        localStorage.setItem(`a${id}`, el.adress);
 
     }
     message(`Сохранено`);

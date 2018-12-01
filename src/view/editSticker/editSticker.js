@@ -47,7 +47,7 @@ export default function editSticker(id) {
                 keyWords = sticker.getElementsByTagName('input')[1].value;
             }
 
-            objects.setElenent(id, { title, content, keyWords, adress });
+            objects.setElement(id, { title, content, keyWords, adress });
 
             sticker.innerHTML = '';
             sticker.className = 'newSticker';
