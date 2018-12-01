@@ -1,7 +1,7 @@
 .editSticker {
     display: inline-block;
     width: 300px;
-    height: 320px;
+    height: 315px;
     background-color: white;
     border: 1px dotted darkgreen;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -9,13 +9,16 @@
     padding: 3px;
     z-index: 3;
     position: absolute;
+    /*
     outline-width: 2px;
     outline-style: solid;
     outline-color: darkgreen;
+    */
 }
 
 .editSticker textarea {
     height: 255px;
+    margin: 0 0 -1px 0;
 }
 
 .editSticker h1 {
@@ -25,7 +28,7 @@
 }
 
 textarea {
-    width: 285px;
+    width: 290px;
     height: auto;
     margin: 3px;
     border: 0px;

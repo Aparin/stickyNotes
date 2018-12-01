@@ -5,8 +5,8 @@ export default function clear() {
         const msg = 'Удалить без возможности восстановления?';
         const div = document.createElement('div');
         div.style.cssText = `
-            text-align:center; padding:10px; position:fixed; 
-            background-color: white; width:200px; height:70px; 
+            font-size:14px; text-align:center; padding:10px; position:fixed; 
+            background-color: white; width:200px; height:100px; 
             top: 50px; left: 100px; margin-right:-100px; 
             margin-bottom:-20px; border: 1px dotted #000`;
         div.onclick = function(e) {
