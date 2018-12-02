@@ -22,20 +22,13 @@ export default class Sticker {
             adress: this.adress,
             id: this.id
         })
-
         const area = document.getElementById('stickyNotes');
         const wrap = makeDOMelement('div', 'newSticker', '', this.id);
         const fragment = document.createDocumentFragment();
 
         fragment.appendChild(addMiniSigns(this.id));
         fragment.appendChild(makeDOMelement('h1', '', this.title));
-        /*
-        if (this.type === 'map') {
-            const adr = makeDOMelement('p', '', this.adress);
-            fragment.appendChild(adr);
-        }
-        fragment.appendChild(makeDOMelement('p', '', this.content));
-        fragment.appendChild(makeDOMelement('p', '', ''));*/
+
         wrap.appendChild(fragment);
         area.appendChild(wrap);
         document.getElementById(this.id).setAttribute('data-action', 'sticker');

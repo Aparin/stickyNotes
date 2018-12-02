@@ -8,6 +8,7 @@ export default function load() {
         const keyWords = localStorage.getItem(`k${i}`);
         const adress = localStorage.getItem(`a${i}`);
         const sticker = new Sticker({ title, content, keyWords, adress });
+
         sticker.create();
         sticker.show();
     }

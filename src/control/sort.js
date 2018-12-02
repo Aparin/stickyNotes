@@ -29,5 +29,5 @@ export default function sort(firstID, secondID) {
         };
         move.id = secondID;
     }
-    console.log(objects.get());
+
 };

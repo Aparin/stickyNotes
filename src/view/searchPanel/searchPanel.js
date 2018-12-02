@@ -1,5 +1,4 @@
 import mkEl from '../../model/makeDOMElement';
-import filter from '../../model/filter';
 
 export default function searchPanel() {
     const node = mkEl('div', 'wrapSearchPanel');
@@ -20,7 +19,7 @@ export default function searchPanel() {
 
     node.appendChild(mkEl('div')); //перевод строки после чекбоксов
 
-    const inp = mkEl('input', 'searchPanel');
+    const inp = mkEl('input', 'searchPanel', '', 'search');
     inp.type = 'text';
     inp.size = "25";
     inp.placeholder = "Поиск по ключевым словам";

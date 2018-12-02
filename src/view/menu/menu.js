@@ -1,5 +1,6 @@
 import makeEl from '../../model/makeDOMElement';
 import seacrhPanel from '../searchPanel/searchPanel';
+import filter from '../../model/filter';
 
 export default function panel() {
     const area = document.getElementById('stickyNotes');
@@ -24,6 +25,12 @@ export default function panel() {
     menu.appendChild(seacrhPanel());
     menu.appendChild(makeEl('div', '', '', 'inform'));
     area.appendChild(menu);
+
+    search.oninput = function(e) {
+        filter(e.target.value);
+    }
+
+
     area.appendChild(makeEl('div', 'clear'));
 
 };
