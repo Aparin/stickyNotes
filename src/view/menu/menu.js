@@ -1,29 +1,29 @@
+import makeEl from '../../model/makeDOMElement';
 import seacrhPanel from '../searchPanel/searchPanel';
 
 export default function panel() {
-    let panelContents = `
-    <div id="panel" class="panel col-lg-12">
+    const area = document.getElementById('stickyNotes');
+    const menu = makeEl('div', 'panel', '', 'panel');
+    menu.classList.add('col-lg-12');
 
-        <div id="example" class="button btn btn-success pull-left" title="Загрузить примеры">
-        Примеры</div>
+    const mkBtn = (id, title, text) => {
+        const btn = makeEl('div', '', text, id);
+        const btnStyle = "button btn btn-success pull-left";
+        btnStyle.split(' ').forEach(function(style) {
+            btn.classList.add(style);
+        });
+        btn.title = title;
+        menu.appendChild(btn);
+    }
 
-        <div id="plus" class="button btn btn-success pull-left" title="Добавить стикер">
-        <span class="plusSign">➕&nbsp</span>стикер</div>
+    mkBtn("example", "Загрузить примеры", 'Примеры');
+    mkBtn("plus", "Добавить стикер", "➕ стикер");
+    mkBtn("plusMap", "Добавить стикер-карту", "➕ карта");
+    mkBtn("saving", "Сохранить всё", "Сохранить");
+    mkBtn("cleaning", "Удалить всё", "Удалить");
+    menu.appendChild(seacrhPanel());
+    menu.appendChild(makeEl('div', '', '', 'inform'));
+    area.appendChild(menu);
+    area.appendChild(makeEl('div', 'clear'));
 
-        <div id="plusMap" class="button btn btn-success pull-left" title="Добавить стикер-карту">
-        <span class="plusSign">➕&nbsp</span>карта</div>
-
-        <div id="saving" class="button btn btn-success pull-left" title="Сохранить  всё">
-        Сохранить</div>    
- 
-        <div id="cleaning" class="button btn btn-success pull-left" title="Удалить  всё">
-        Удалить</div>
-
-        ${seacrhPanel()}
-        
-        <div id='inform'></div>
-    </div>
-    `;
-
-    document.getElementById('stickyNotes').insertAdjacentHTML('beforeend', panelContents);
 };
