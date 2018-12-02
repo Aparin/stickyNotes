@@ -10,7 +10,7 @@ export default function filter(str) {
     const arr = objects.get();
     const newArr = [];
     arr.map((value) => {
-        if (!~value.keyWords.indexOf(str)) newArr.push(value.id);
+        if (!~value.keyWords.toLowerCase().indexOf(str.toLowerCase())) newArr.push(value.id);
     });
 
     newArr.map((value) => {
