@@ -1,6 +1,6 @@
 {
     "name": "stickynotes",
-    "version": "1.3.12",
+    "version": "1.3.13",
     "description": "веб-стикеры",
     "main": "dist/main.js",
     "scripts": {

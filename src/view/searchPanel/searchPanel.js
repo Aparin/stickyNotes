@@ -11,8 +11,6 @@ export default function searchPanel() {
     checkGr.appendChild(mkEl('label', '', 'Заголовки'));
     node.appendChild(checkGr);
 
-    node.appendChild(mkEl('span', 'checkDivider', ' | '));
-
     checkGr = mkEl('div', 'checkGroup');
     const contentCheck = mkEl('input', '');
     contentCheck.type = 'checkbox';
