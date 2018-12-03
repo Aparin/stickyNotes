@@ -4,18 +4,18 @@ export default function searchPanel() {
     const node = mkEl('div', 'wrapSearchPanel');
 
     let checkGr = mkEl('div', 'checkGroup');
-    const titleCheck = mkEl('input', '');
+    const titleCheck = mkEl('input', '', '', 'titleCheck');
     titleCheck.type = 'checkbox';
     checkGr.appendChild(titleCheck);
     checkGr.appendChild(mkEl('label', '', 'Заголовки'));
     node.appendChild(checkGr);
 
     checkGr = mkEl('div', 'checkGroup');
-    const contentCheck = mkEl('input', '');
+    const contentCheck = mkEl('input', '', '', 'contentCheck');
     contentCheck.type = 'checkbox';
     checkGr.appendChild(contentCheck);
     checkGr.appendChild(mkEl('label', '', 'Содержимое'));
-    node.appendChild(checkGr); /* */
+    node.appendChild(checkGr);
 
     node.appendChild(mkEl('div')); //перевод строки после чекбоксов
 

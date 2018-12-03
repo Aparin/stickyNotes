@@ -26,10 +26,24 @@ export default function panel() {
     menu.appendChild(makeEl('div', '', '', 'inform'));
     area.appendChild(menu);
 
-    search.oninput = function(e) {
-        filter(e.target.value);
+    const toSearch = () => {
+        const text = search.value;
+        const tCheck = titleCheck.checked;
+        const cCheck = contentCheck.checked;
+        filter(text, tCheck, cCheck);
     }
-
+    search.oninput = function(e) {
+        //filter(e.target.value);
+        toSearch();
+    }
+    titleCheck.onchange = function(e) {
+        toSearch();
+        // console.log("titleCheck is ", titleCheck.checked);
+    }
+    contentCheck.onchange = function(e) {
+        toSearch();
+        // console.log("contentCheck is ", contentCheck.checked);
+    }
 
     area.appendChild(makeEl('div', 'clear'));
 
