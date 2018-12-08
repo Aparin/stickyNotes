@@ -1,3 +1,5 @@
+import './menu.css';
+
 import makeEl from '../../model/makeDOMElement';
 import seacrhPanel from '../searchPanel/searchPanel';
 import filter from '../../model/filter';

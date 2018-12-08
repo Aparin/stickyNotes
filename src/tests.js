@@ -1,3 +1,4 @@
+/*
 import makeDOMelement from './singleSticker/makeDOMElement';
 import Sticker from './singleSticker/Sticker';
 import currentId from './singleSticker/currentId';
@@ -9,6 +10,7 @@ describe('makeDOMelement', function() {
         assert.equal(makeDOMelement('div', 'red').outerHTML, '<div class="red"></div>');
     });
 });
+*/
 /*
 describe('makeSticker', function() {
     it('Создание нового стикера c стандартными настройками', function() {

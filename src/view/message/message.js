@@ -1,3 +1,5 @@
+import './message.css';
+
 const message = (mess, color = 'darkgreen', time = 2000) => {
     const messageField = document.getElementById('inform');
     messageField.innerText = mess;
