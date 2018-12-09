@@ -21,11 +21,11 @@
     <!---- Начало ---->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div style="margin: 0 auto" class="navbar-brand center-block">StickyNotes: записи - найдутся</div>
+        <div style="margin: 3px auto" class="navbar-brand center-block">StickyNotes. Записи - найдутся.</div>
 
 
         <!----      Кнопки меню       ---->
-        <div style="margin: 0 auto" class="btn-group btn-group-sm center-block" role="group" aria-label="Basic example">
+        <div style="margin: 3px auto" class="btn-group btn-group-sm center-block" role="group" aria-label="Basic example">
             <!-- <button type="button" class="btn btn-warning">Примеры</button> -->
             <div class="btn-group btn-group-sm" role="group">
                 <button id="btnGroupDrop1" type="button" class="btn btn-warning dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,6 +38,20 @@
             </div>
             <button type="button" class="btn btn-success">Сохранить</button>
             <button type="button" class="btn btn-dark">Удалить</button>
+        </div>
+
+        <!--        Панель поиска       -->
+        <div style="margin: 10px auto; width: 320px; " class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <div style="background-color: #28a745;" class="input-group-text">
+                    <input title="Добавить поиск по заголовкам" type="checkbox">
+                </div>
+                <div style="background-color: #ffc107;" class="input-group-text">
+                    <input title="Добавить поиск по содержимому" type="checkbox">
+                </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Поиск по ключевым словам">
+            <h5><span style="margin-left: 7px; border-radius: 18px;" class="badge badge-info">?</span></h5>
         </div>
     </nav>
 
