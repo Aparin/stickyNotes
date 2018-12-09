@@ -9,8 +9,8 @@ module.exports = {
         }]
     },
     entry: {
-        index: './src/index.js',
-        tests: './src/tests.js'
+        index: './src/start/index.js',
+        tests: './src/start/tests.js'
     },
     output: {
         filename: '[name].js',
