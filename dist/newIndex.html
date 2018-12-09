@@ -11,32 +11,35 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=0299c42e-268e-4337-9740-e158b72d29fd&lang=ru_RU" type="text/javascript">
     </script>
     <!----      Удалить       ---->
+    <!--
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    -->
+    <link rel="stylesheet" href="../src/start/bootstrap.css">
 </head>
 
 <body>
     <!---- Начало ---->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="navbar-brand">StikyNotes: записки - найдутся</div>
-    </nav>
+        <div style="margin: 0 auto" class="navbar-brand center-block">StickyNotes: записи - найдутся</div>
 
-    <!----      Кнопки меню       ---->
-    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-warning">Примеры</button>
-        <div class="btn-group btn-group-sm" role="group">
-            <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+        <!----      Кнопки меню       ---->
+        <div style="margin: 0 auto" class="btn-group btn-group-sm center-block" role="group" aria-label="Basic example">
+            <!-- <button type="button" class="btn btn-warning">Примеры</button> -->
+            <div class="btn-group btn-group-sm" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-warning dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   + Новый
                 </button>
-            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <a class="dropdown-item" href="#">Добавить стикер</a>
-                <a class="dropdown-item" href="#">Добавить карту </a>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item" href="#">Добавить стикер</a>
+                    <a class="dropdown-item" href="#">Добавить карту </a>
+                </div>
             </div>
+            <button type="button" class="btn btn-success">Сохранить</button>
+            <button type="button" class="btn btn-dark">Удалить</button>
         </div>
-        <button type="button" class="btn btn-success">Сохранить</button>
-        <button type="button" class="btn btn-dark">Удалить</button>
-    </div>
-
+    </nav>
 
     <!----      Конец макета       ---->
 
