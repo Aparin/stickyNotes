@@ -1,3 +1,4 @@
+import './searchPanel.css';
 import mkEl from '../../model/makeDOMElement';
 
 export default function searchPanel() {

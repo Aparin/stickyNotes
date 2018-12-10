@@ -8,7 +8,7 @@ import editSticker from '../view/editSticker/editSticker';
 import editMapSticker from '../view/editMapSticker';
 
 export default function listeners() {
-    example.onclick = function() { exmpl(); }
+    // example.onclick = function() { exmpl(); }
     plus.onclick = function() {
         const sticker = new Sticker({});
         sticker.create();
@@ -36,7 +36,7 @@ export default function listeners() {
             }
         }
     };
-
+    /*
     field.addEventListener('mousedown', function(e) {
         let target = e.target;
         while (target != document) {
@@ -51,4 +51,5 @@ export default function listeners() {
             target = target.parentNode;
         }
     });
+    */
 }

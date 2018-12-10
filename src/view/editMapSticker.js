@@ -9,9 +9,9 @@ export default function editMapSticker(id) {
     let body = sticker.getElementsByTagName('p')[1].textContent;
 
     sticker.innerHTML = `    
-        <img src="img/edit_10.png" class="editBig" title="Закрыть без изменений" 
+        <img src="./img/edit_10.png" class="editBig" title="Закрыть без изменений" 
         data-action="close">
-        <img src="img/save_18.png" class="editBig" title="Применить изменения" 
+        <img src="./img/save_18.png" class="editBig" title="Применить изменения" 
         data-action="ok">
         <input type="text" style="width:250px; " draggable="false" value="${head}" placeholder="Введите название">
         <br />	

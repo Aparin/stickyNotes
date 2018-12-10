@@ -1,3 +1,4 @@
+import './editSticker.css';
 import addMiniSigns from '../../model/addMiniSigns';
 import objects from '../../model/objects';
 import xhrYaMap from '../../control/xhrYaMap';
@@ -23,7 +24,7 @@ export default function editSticker(id, type) {
     if (adress || type === 'map') {
         sticker.innerHTML += `  
         <input type="text" title="Адрес: " class="adress" draggable="false" value="${adress}" placeholder="Введите адрес и нажмите обновить -->">
-        <img src="img/reload_18.png" class="editBig" title="Загрузить карту" 
+        <img src="./img/reload_18.png" class="editBig" title="Загрузить карту" 
         data-action="reload">
         <div id='map' class='editMap'></div>
         `;
