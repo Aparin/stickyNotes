@@ -8,7 +8,7 @@ import editSticker from '../view/editSticker/editSticker';
 import editMapSticker from '../view/editMapSticker';
 
 export default function listeners() {
-    example.onclick = function() { exmpl(); }
+    // example.onclick = function() { exmpl(); }
     plus.onclick = function() {
         const sticker = new Sticker({});
         sticker.create();

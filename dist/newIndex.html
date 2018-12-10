@@ -12,9 +12,8 @@
     </script>
     <!----      Удалить       ---->
     <!--
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    -->
     <link rel="stylesheet" href="../src/start/bootstrap.css">
+    -->
 </head>
 
 <body>
@@ -29,28 +28,28 @@
             <!-- <button type="button" class="btn btn-warning">Примеры</button> -->
             <div class="btn-group btn-group-sm" role="group">
                 <button id="btnGroupDrop1" type="button" class="btn btn-warning dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  + Новый
+                    ➕ Новый
                 </button>
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <a class="dropdown-item" href="#">Добавить стикер</a>
-                    <a class="dropdown-item" href="#">Добавить карту </a>
+                    <a id="plus" class="dropdown-item" href="#">Добавить стикер</a>
+                    <a id="plusMap" class="dropdown-item" href="#">Добавить карту </a>
                 </div>
             </div>
-            <button type="button" class="btn btn-success">Сохранить</button>
-            <button type="button" class="btn btn-dark">Удалить</button>
+            <button id="saving" type="button" class="btn btn-success">Сохранить</button>
+            <button id="cleaning" type="button" class="btn btn-dark">Удалить</button>
         </div>
 
         <!--        Панель поиска       -->
         <div style="margin: 10px auto; width: 320px; " class="input-group input-group-sm">
             <div class="input-group-prepend">
                 <div style="background-color: #28a745;" class="input-group-text">
-                    <input title="Добавить поиск по заголовкам" type="checkbox">
+                    <input id="titleCheck" title="Добавить поиск по заголовкам" type="checkbox">
                 </div>
                 <div style="background-color: #ffc107;" class="input-group-text">
-                    <input title="Добавить поиск по содержимому" type="checkbox">
+                    <input id="contentCheck" title="Добавить поиск по содержимому" type="checkbox">
                 </div>
             </div>
-            <input type="text" class="form-control" placeholder="Поиск по ключевым словам">
+            <input id="search" type="text" class="form-control" placeholder="Поиск по ключевым словам">
             <h5><span style="margin-left: 7px; border-radius: 18px;" class="badge badge-info">?</span></h5>
         </div>
     </nav>
@@ -69,9 +68,9 @@
     <div id='out' class='out'></div>
     <div id='out2' class='out'>
     </div>
-    <!--
+
     <script src="index.js"></script>
-    -->
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
