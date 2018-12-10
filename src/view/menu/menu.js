@@ -54,9 +54,9 @@ export default function panel() {
         toSearch();
     }
     question.onclick = function(e) {
-            popup(`<p>Галка в <span style="color: green;">зелёном квадрате</span> <br>
+            popup({ msg: `<p>Галка в <span style="color: green;">зелёном квадрате</span> <br>
                     добавляет поиск по заголовкам. </p>
-                    <p>В <span style="color: #ffc107;">жёлтом</span> - добавляет поиск по содержимому</p>`, 160);
+                    <p>В <span style="color:orange;">оранжевом</span> - добавляет поиск по содержимому</p>`, e: e, height: 160 });
         }
         // area.appendChild(makeEl('div', 'clear'));
 
