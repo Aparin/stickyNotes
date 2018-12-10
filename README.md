@@ -1,9 +1,7 @@
 ﻿# StickyNotes. Записи - найдутся.
 
-Рабочая версия 1+. 
-Сохраняет в localStorage.
+Рабочая версия 1+. Сохраняет в localStorage. Посмотреть в работе: https://aparin.github.io/stickyNotes/
 
-Текущая версия: https://aparin.github.io/stickyNotes/
 ## v.1.5 добавлена поддержка смартфонов
 ![](https://raw.githubusercontent.com/Aparin/stickyNotes/master/img/screenshort-v.1.5.png)
 
