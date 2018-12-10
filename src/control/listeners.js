@@ -36,7 +36,7 @@ export default function listeners() {
             }
         }
     };
-
+    /*
     field.addEventListener('mousedown', function(e) {
         let target = e.target;
         while (target != document) {
@@ -51,4 +51,5 @@ export default function listeners() {
             target = target.parentNode;
         }
     });
+    */
 }

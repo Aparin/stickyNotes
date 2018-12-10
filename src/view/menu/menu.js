@@ -3,6 +3,7 @@ import './menu.css';
 import makeEl from '../../model/makeDOMElement';
 import seacrhPanel from '../searchPanel/searchPanel';
 import filter from '../../model/filter';
+import popup from '../popup/';
 
 export default function panel() {
 
@@ -36,6 +37,11 @@ export default function panel() {
         const text = search.value;
         const tCheck = titleCheck.checked;
         const cCheck = contentCheck.checked;
+        if (tCheck && cCheck) { search.placeholder = 'По ключам, заголовкам, содержимому'; } else
+        if (tCheck) { search.placeholder = 'По ключам и заголовкам'; } else
+        if (cCheck) { search.placeholder = 'По ключам и содержимому'; } else {
+            search.placeholder = 'Поиск по ключевым словам';
+        }
         filter(text, tCheck, cCheck);
     }
     search.oninput = function(e) {
@@ -47,7 +53,11 @@ export default function panel() {
     contentCheck.onchange = function(e) {
         toSearch();
     }
-
-    // area.appendChild(makeEl('div', 'clear'));
+    question.onclick = function(e) {
+            popup(`<p>Галка в <span style="color: green;">зелёном квадрате</span> <br>
+                    добавляет поиск по заголовкам. </p>
+                    <p>В <span style="color: #ffc107;">жёлтом</span> - добавляет поиск по содержимому</p>`, 160);
+        }
+        // area.appendChild(makeEl('div', 'clear'));
 
 };

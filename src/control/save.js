@@ -12,5 +12,5 @@ export default function save() {
         localStorage.setItem(`a${id}`, el.adress);
 
     }
-    message(`Сохранено`);
+    // message(`Сохранено`);
 }

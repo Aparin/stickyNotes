@@ -43,5 +43,5 @@ export default function example() {
     `, 'программирование, учёба, шаблоны проектирования');
 
     const ex = document.getElementById('example');
-    ex.remove();
+    // ex.remove();
 }
