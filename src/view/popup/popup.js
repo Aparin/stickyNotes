@@ -15,7 +15,7 @@ export default function popup(data) {
 
     const top = elem.top;
     let left = elem.left;
-    if (left > 320) left -= 310;
+    if (left > 320) { left -= 310 } else left = 0;
 
     node.style.top = top + 40 + 'px';
     node.style.left = left + 'px';
