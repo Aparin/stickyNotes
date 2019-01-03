@@ -12,9 +12,12 @@ export default function load() {
         const keyWords = localStorage.getItem(`k${i}`);
         const adress = localStorage.getItem(`a${i}`);
 
-        const sticker = new Sticker({ title, content, keyWords, adress });
+        objects.add({ title, content, keyWords, adress });
+    }
 
-        sticker.create();
+    const arrLng = objects.get().length;
+    for (let i = arrLng; i !== 0; i--) {
+        const sticker = new Sticker(i);
         sticker.toDOM();
         sticker.show();
     }

@@ -6,15 +6,15 @@ import editMapSticker from '../view/editMapSticker';
 import objects from './objects';
 
 export default class Sticker {
-    constructor({ title = '', content = '', keyWords = '', adress = '' }) {
-        this.title = title;
-        this.content = content;
-        this.adress = adress;
-        this.keyWords = keyWords;
-        this.id = currentId();
+    constructor(indx) {
+        this.indx = indx;
+        this.element = objects.getElement(indx);
+        this.id = indx;
     }
 
     create() {
+        /*
+        this.title = this.element.title;
         objects.add({
             title: this.title,
             content: this.content,
@@ -22,19 +22,22 @@ export default class Sticker {
             adress: this.adress,
             id: this.id
         })
+        */
     }
 
     toDOM() {
+        const id = this.id;
+        const { title } = this.element;
         const area = document.getElementById('stickyNotes');
-        const wrap = makeDOMelement('div', 'newSticker', '', this.id);
+        const wrap = makeDOMelement('div', 'newSticker', '', id);
         const fragment = document.createDocumentFragment();
 
-        fragment.appendChild(addMiniSigns(this.id));
-        fragment.appendChild(makeDOMelement('h1', '', this.title));
+        fragment.appendChild(addMiniSigns(id));
+        fragment.appendChild(makeDOMelement('h1', '', title));
 
         wrap.appendChild(fragment);
         area.appendChild(wrap);
-        document.getElementById(this.id).setAttribute('data-action', 'sticker');
+        document.getElementById(id).setAttribute('data-action', 'sticker');
     }
 
     hide() {
