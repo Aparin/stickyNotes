@@ -1,6 +1,7 @@
 import Sticker from '../model/Sticker';
-import objects from '../model/objects';
 import example from '../view/example';
+import objects from '../model/objects';
+import currentId from '../model/currentId';
 
 export default function load() {
     if (!localStorage.getItem('t1')) example();
@@ -10,9 +11,11 @@ export default function load() {
         const content = localStorage.getItem(`c${i}`);
         const keyWords = localStorage.getItem(`k${i}`);
         const adress = localStorage.getItem(`a${i}`);
+
         const sticker = new Sticker({ title, content, keyWords, adress });
 
         sticker.create();
+        sticker.toDOM();
         sticker.show();
     }
 };

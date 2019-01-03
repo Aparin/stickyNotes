@@ -12,11 +12,13 @@ export default function listeners() {
     plus.onclick = function() {
         const sticker = new Sticker({});
         sticker.create();
+        sticker.toDOM();
         sticker.full();
     }
     plusMap.onclick = function() {
         const sticker = new Sticker({});
         sticker.create();
+        sticker.toDOM();
         sticker.full('map');
     }
     saving.onclick = function() { save(); }

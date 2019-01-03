@@ -22,6 +22,9 @@ export default class Sticker {
             adress: this.adress,
             id: this.id
         })
+    }
+
+    toDOM() {
         const area = document.getElementById('stickyNotes');
         const wrap = makeDOMelement('div', 'newSticker', '', this.id);
         const fragment = document.createDocumentFragment();
