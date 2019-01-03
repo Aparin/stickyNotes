@@ -1,23 +1,24 @@
-import exmpl from '../view/example';
 import Sticker from '../model/Sticker';
 import save from './save';
 import deleteSticker from '../view/deleteSticker';
 import clear from './clear';
-import moveTheSticker from './moveTheSticker';
 import editSticker from '../view/editSticker/editSticker';
 import editMapSticker from '../view/editMapSticker';
+import currentId from '../model/currentId';
+import objects from '../model/objects';
 
 export default function listeners() {
-    // example.onclick = function() { exmpl(); }
     plus.onclick = function() {
-        const sticker = new Sticker({});
-        sticker.create();
+        const id = currentId();
+        const sticker = new Sticker(id);
+        objects.add({ title: '', content: '', keyWords: '' });
         sticker.toDOM();
         sticker.full();
     }
     plusMap.onclick = function() {
-        const sticker = new Sticker({});
-        sticker.create();
+        const id = currentId();
+        const sticker = new Sticker(id);
+        objects.add({ title: '', content: '', keyWords: '', adress: '' });
         sticker.toDOM();
         sticker.full('map');
     }

@@ -12,22 +12,12 @@ export default class Sticker {
         this.id = indx;
     }
 
-    create() {
-        /*
-        this.title = this.element.title;
-        objects.add({
-            title: this.title,
-            content: this.content,
-            keyWords: this.keyWords,
-            adress: this.adress,
-            id: this.id
-        })
-        */
-    }
-
     toDOM() {
         const id = this.id;
-        const { title } = this.element;
+        let title = '';
+        if (this.element) {
+            ({ title = '' } = this.element)
+        }
         const area = document.getElementById('stickyNotes');
         const wrap = makeDOMelement('div', 'newSticker', '', id);
         const fragment = document.createDocumentFragment();
@@ -47,9 +37,6 @@ export default class Sticker {
     show() {
         document.getElementById(this.id).style = 'display: display-block';
     }
-    mini() {
-        //состояние стикера в свёрнутом виде
-    }
 
     full(type = '') {
         if (type === 'map') {
@@ -59,15 +46,4 @@ export default class Sticker {
         }
     }
 
-    move() {
-        //перемещение стикера
-    }
-
-    setId() {
-        //установить id
-    }
-
-    addUrl() {
-
-    }
 }
