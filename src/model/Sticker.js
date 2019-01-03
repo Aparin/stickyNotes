@@ -26,7 +26,7 @@ export default class Sticker {
         fragment.appendChild(makeDOMelement('h1', '', title));
 
         wrap.appendChild(fragment);
-        area.appendChild(wrap);
+        area.insertBefore(wrap, area.firstChild);
         document.getElementById(id).setAttribute('data-action', 'sticker');
     }
 

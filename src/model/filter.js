@@ -8,8 +8,9 @@ export default function filter(searchStr, titleCheck, contentCheck) {
         document.getElementById(i).style.display = 'inline-block';
     }
     const arr = objects.get();
+
     const newArr = [];
-    arr.map((element) => {
+    arr.map((element, index) => {
         let selector = 0;
 
         if (titleCheck && contentCheck) {
@@ -28,24 +29,24 @@ export default function filter(searchStr, titleCheck, contentCheck) {
 
         switch (selector) {
             case 0:
-                if (inKey) newArr.push(element.id);
+                if (inKey) newArr.push(index);
                 break;
 
             case 1:
-                if (inKey && inTitle) newArr.push(element.id);
+                if (inKey && inTitle) newArr.push(index);
                 break;
 
             case 2:
-                if (inKey && inContent) newArr.push(element.id);
+                if (inKey && inContent) newArr.push(index);
                 break;
             case 3:
-                if (inKey && inTitle && inContent) newArr.push(element.id);
+                if (inKey && inTitle && inContent) newArr.push(index);
                 break;
         }
 
     });
 
     newArr.map((value) => {
-        document.getElementById(value).style.display = 'none';
+        document.getElementById(value + 1).style.display = 'none';
     });
 }

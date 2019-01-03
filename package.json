@@ -1,7 +1,7 @@
 {
     "name": "stickynotes",
-    "version": "1.5.3",
-    "description": "веб-стикеры",
+    "version": "1.5.4",
+    "description": "Быстрый поиск по записям",
     "main": "dist/index.html",
     "scripts": {
         "dev": "webpack --mode development --watch",
