@@ -33,7 +33,7 @@ export default class Sticker {
     }
 
     show() {
-        document.getElementById(this.id).style = 'display: display-block';
+        document.getElementById(this.id).style = 'display: block';
     }
 
     full(type = '') {

@@ -1,7 +1,10 @@
+import '../view/main/main.css';
+import '../view/editSticker/editSticker.css';
 import makeDOMelement from '../model/makeDOMElement';
 import state from '../model/state';
 import Sticker from '../model/Sticker';
 import editSticker from '../view/editSticker/editSticker';
+import xhrYaMap from '../control/xhrYaMap';
 
 let module;
 const testObj = { title: "New title" };
@@ -24,7 +27,7 @@ const error = (module, err) => {
 module = 'makeDOMelement';
 describe(module, function() {
     try {
-        it('Проверка создания узла', function() {
+        it('Проверка создания узла', () => {
             assert.equal(makeDOMelement('р', 'red', 'Hi, world').outerHTML, '<р class="red">Hi, world</р>');
             assert.equal(makeDOMelement('div', 'red', 'Hi, world').outerHTML, '<div class="red">Hi, world</div>');
             assert.equal(makeDOMelement('div', 'red').outerHTML, '<div class="red"></div>');
@@ -38,24 +41,24 @@ describe(module, function() {
 module = 'state';
 describe(module, function() {
     try {
-        it('Запись и чтение массива', function() {
+        it('Запись и чтение массива', () => {
             state.set(testState);
             assert.equal(testState, state.get());
         });
-        it('Добавление элемента в конец массива', function() {
+        it('Добавление элемента в конец массива', () => {
             state.add(testObj);
             const stLng = state.get().length;
             assert.equal(state.getElement(stLng), testObj);
         });
-        it('Запись и чтение элемента', function() {
+        it('Запись и чтение элемента', () => {
             state.setElement(testState[0]);
             assert.equal(state.getElement(1), testState[0]);
         });
-        it('Вставка элемента', function() {
+        it('Вставка элемента', () => {
             state.insertElement(1, testObj);
             assert.equal(state.getElement(1), testObj);
         });
-        it('Удаление элемента', function() {
+        it('Удаление элемента', () => {
             state.delElement(1);
             assert.equal(state.getElement(1), testState[0]);
         });
@@ -72,7 +75,7 @@ describe(module, function() {
     try {
         state.set(testState);
 
-        const sticker = new Sticker(1);
+        let sticker = new Sticker(1);
         it('Создание нового стикера', () => {
             assert.equal(sticker.element.title, state.getElement(1).title);
         });
@@ -91,10 +94,26 @@ describe(module, function() {
             assert.equal('block',
                 window.getComputedStyle(el, null).getPropertyValue('display'));
         });
-        setTimeout(() => { // иначе удаляет раньше, чем отработали предыдущие блоки 
+        it('Редактируем как обычный стикер', function() {
+            sticker.full();
+            assert.equal('editSticker', el.className);
+        });
+        it('Редактируем как map-стикер', function() {
+            sticker.full('map');
+            assert.equal('editMapSticker', el.className);
+        });
+        setTimeout(() => { // иначе удаляет раньше, чем отработали предыдущие блоки, особенно 'editMapSticker'
             el.remove();
-        }, 100);
+        }, 2000);
     } catch (e) {
         error(module, e);
     }
 });
+
+/***** editSticker *****/
+/*
+let id = 2;
+let sticker2 = new Sticker(id);
+sticker2.toDOM();
+editSticker(id, '');
+*/
