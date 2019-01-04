@@ -5,20 +5,20 @@ import clear from './clear';
 import editSticker from '../view/editSticker/editSticker';
 import editMapSticker from '../view/editMapSticker';
 import currentId from '../model/currentId';
-import objects from '../model/state';
+import state from '../model/state';
 
 export default function listeners() {
     plus.onclick = function() {
         const id = currentId();
         const sticker = new Sticker(id);
-        objects.add({ title: '', content: '', keyWords: '' });
+        state.add({ title: '', content: '', keyWords: '' });
         sticker.toDOM();
         sticker.full();
     }
     plusMap.onclick = function() {
         const id = currentId();
         const sticker = new Sticker(id);
-        objects.add({ title: '', content: '', keyWords: '', adress: '' });
+        state.add({ title: '', content: '', keyWords: '', adress: '' });
         sticker.toDOM();
         sticker.full('map');
     }

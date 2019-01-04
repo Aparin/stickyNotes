@@ -1,12 +1,12 @@
 import './editSticker.css';
 import addMiniSigns from '../../model/addMiniSigns';
-import objects from '../../model/state';
+import state from '../../model/state';
 import xhrYaMap from '../../control/xhrYaMap';
 
 export default function editSticker(id, type) {
     const sticker = document.getElementById(id);
     sticker.className = 'editSticker';
-    const el = objects.getElement(id);
+    const el = state.getElement(id);
 
     let title = el.title;
     let content = el.content;
@@ -48,7 +48,7 @@ export default function editSticker(id, type) {
                 keyWords = sticker.getElementsByTagName('input')[1].value;
             }
 
-            objects.setElement(id, { title, content, keyWords, adress });
+            state.setElement(id, { title, content, keyWords, adress });
 
             sticker.innerHTML = '';
             sticker.className = 'newSticker';

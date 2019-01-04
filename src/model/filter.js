@@ -1,6 +1,4 @@
 import state from './state';
-import clear from '../control/clear';
-import Sticker from './Sticker';
 
 export default function filter(searchStr, titleCheck, contentCheck) {
     for (let i = 1; true; i++) {

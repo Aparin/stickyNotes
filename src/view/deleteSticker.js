@@ -1,9 +1,9 @@
-import objects from '../model/state';
+import state from '../model/state';
 
 export default function deleteSticker(id) {
 
     document.getElementById(id).remove();
-    objects.delElement(id);
+    state.delElement(id);
 
     for (var i = +id + 1; true; i++) {
         const sticker = document.getElementById(i);

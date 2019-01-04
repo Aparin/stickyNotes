@@ -1,10 +1,10 @@
 import message from '../view/message/message';
-import objects from '../model/state';
+import state from '../model/state';
 export default function save() {
     localStorage.clear();
 
-    for (let id = 1; objects.getElement(id); id++) {
-        const el = objects.getElement(id);
+    for (let id = 1; state.getElement(id); id++) {
+        const el = state.getElement(id);
 
         localStorage.setItem(`t${id}`, el.title);
         localStorage.setItem(`c${id}`, el.content);

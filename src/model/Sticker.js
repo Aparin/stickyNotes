@@ -1,14 +1,12 @@
-import currentId from './currentId';
 import makeDOMelement from './makeDOMElement';
 import addMiniSigns from './addMiniSigns';
 import editSticker from '../view/editSticker/editSticker';
-import editMapSticker from '../view/editMapSticker';
-import objects from './state';
+import state from './state';
 
 export default class Sticker {
     constructor(indx) {
         this.indx = indx;
-        this.element = objects.getElement(indx);
+        this.element = state.getElement(indx);
         this.id = indx;
     }
 

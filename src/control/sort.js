@@ -1,11 +1,11 @@
 import currentId from '../model/currentId';
-import objects from '../model/objects';
+import state from '../model/state';
 
 export default function sort(firstID, secondID) {
-    const moveObj = objects.getElement(firstID);
+    const moveObj = state.getElement(firstID);
 
-    objects.delElement(firstID);
-    objects.insertElement(secondID, moveObj);
+    state.delElement(firstID);
+    state.insertElement(secondID, moveObj);
 
     if (secondID === undefined) { secondID = currentId() - 1; }
     if (firstID === secondID) { return };
