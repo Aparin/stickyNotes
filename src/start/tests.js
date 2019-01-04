@@ -9,7 +9,7 @@ import xhrYaMap from '../control/xhrYaMap';
 let module;
 const testObj = { title: "New title" };
 const testState = [
-    { title: 'Title1', content: 'content1', keyWords: 'keyword1', adress: 'adress1' },
+    { title: 'Title1', content: 'content1', keyWords: 'keyword1', adress: '' },
     { title: 'Title2', content: 'content2', keyWords: 'keyword2', adress: 'adress2' }
 ];
 
@@ -75,7 +75,7 @@ describe(module, function() {
     try {
         state.set(testState);
 
-        let sticker = new Sticker(1);
+        const sticker = new Sticker(1);
         it('Создание нового стикера', () => {
             assert.equal(sticker.element.title, state.getElement(1).title);
         });
@@ -98,12 +98,17 @@ describe(module, function() {
             sticker.full();
             assert.equal('editSticker', el.className);
         });
+
+        const stickerMap = new Sticker(2);
+        stickerMap.toDOM();
+        stickerMap.full('map');
+        const map = document.getElementById('2');
         it('Редактируем как map-стикер', function() {
-            sticker.full('map');
-            assert.equal('editMapSticker', el.className);
+            assert.equal('editMapSticker', map.className);
         });
         setTimeout(() => { // иначе удаляет раньше, чем отработали предыдущие блоки, особенно 'editMapSticker'
             el.remove();
+            map.remove();
         }, 2000);
     } catch (e) {
         error(module, e);

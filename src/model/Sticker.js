@@ -37,11 +37,7 @@ export default class Sticker {
     }
 
     full(type = '') {
-        if (type === 'map') {
-            editSticker(this.id, type);
-        } else {
-            editSticker(this.id, type);
-        }
+        editSticker(this.id, type);
     }
 
 }

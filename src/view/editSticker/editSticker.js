@@ -21,7 +21,7 @@ export default function editSticker(id, type) {
     <input type="text" style="width:250px" draggable="false" value="${title}" placeholder="Введите заголовок">
     <br />
     <textarea name="textArea" placeholder="Место для заметок">${content}</textarea>`;
-    if (type === 'map') {
+    if (type === 'map' || (adress !== "undefined" && adress)) {
         sticker.innerHTML += `  
         <input type="text" title="Адрес: " class="adress" draggable="false" value="${adress}" placeholder="Введите адрес и нажмите обновить -->">
         <img src="./img/reload_18.png" class="editBig" title="Загрузить карту" 

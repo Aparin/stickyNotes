@@ -1,7 +1,6 @@
 import Sticker from '../model/Sticker';
 import example from '../view/example';
 import state from '../model/state';
-import currentId from '../model/currentId';
 
 export default function load() {
     if (!localStorage.getItem('t1')) example();
