@@ -1,5 +1,6 @@
 import makeDOMelement from '../model/makeDOMElement';
 import state from '../model/state';
+import Sticker from '../model/Sticker';
 import editSticker from '../view/editSticker/editSticker';
 
 let module;
@@ -10,10 +11,9 @@ const testState = [
 ];
 
 const error = (module, err) => {
-    console.log(`В коде модуля "${module}" ошибка "${err.name}"! ${err.message}`);
+    console.log(`В коде модуля "${module}" ошибка "${err.name}": ${err.message}`);
     document.body.insertAdjacentHTML('afterend',
-        `<p style="color: red">В коде модуля <b>"${module}"</b> ошибка "${err.name}"!
-                                <br>${err.message}
+        `<p style="color: red">В коде модуля <b>"${module}"</b> ошибка "${err.name}": ${err.message}
         </p>`);
     // throw "stop";
 }
@@ -65,44 +65,36 @@ describe(module, function() {
 });
 
 /****************** VIEW ******************/
-/*
-module = 'editSticker';
+
+/***** Sticker *****/
+module = 'Sticker';
 describe(module, function() {
-    document.body.insertAdjacentHTML('beforeend', '<div id="editSticker"><h1>Sticker</h1></div>');
-    // editSticker('editSticker');
-    it('Проверка ', function() {
-        assert.equal(true, document.getElementById('editSticker').className === 'editSricker');
-    });
+    try {
+        state.set(testState);
+
+        const sticker = new Sticker(1);
+        it('Создание нового стикера', () => {
+            assert.equal(sticker.element.title, state.getElement(1).title);
+        });
+
+        sticker.toDOM();
+        const el = document.getElementById('1');
+        it('Отправляем в DOM', () => {
+            assert.equal(true, !!el);
+        });
+        it('Скрываем стикер', () => {
+            sticker.hide();
+            assert.equal('none', el.style.display);
+        });
+        it('Отображаем стикер', () => {
+            sticker.show();
+            assert.equal('block',
+                window.getComputedStyle(el, null).getPropertyValue('display'));
+        });
+        setTimeout(() => { // иначе удаляет раньше, чем отработали предыдущие блоки 
+            el.remove();
+        }, 100);
+    } catch (e) {
+        error(module, e);
+    }
 });
-*/
-/*
-import Sticker from './singleSticker/Sticker';
-import currentId from './singleSticker/currentId';
-
-
-*/
-/*
-describe('makeSticker', function() {
-    it('Создание нового стикера c стандартными настройками', function() {
-        assert.equal(makeSticker({}).toString(), `makeSticker вернул объект: id : 1, className : newSticker, head : Новый стикер, body : Текст стикера`)
-    });
-
-    it('Создание нового стикера', function() {
-        assert.equal(makeSticker({ id: 15, className: 'newClass', head: 'Super HeadLine', body: 'Some very intresting or important text' }), 'makeSticker вернул объект: id : 15, className : newClass, head : Super HeadLine, body : Some very intresting or important text');
-    });
-
-});
-*/
-/*
-const sticker = new Sticker();
-console.log(sticker.name);
-describe('Sticker', function() {
-    it('Создание нового стикера на объекте cо дефолтными настройками', function() {
-        assert.equal(sticker.name, `Новый стикер`);
-        assert.equal(sticker.type, `simple`);
-        assert.equal(sticker.content, '');
-        assert.equal(sticker.id, currentId());
-    });
-
-});
-*/
