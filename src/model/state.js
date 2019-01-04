@@ -1,4 +1,4 @@
-const objects = {
+const state = {
     arr: [],
 
     // all stickers
@@ -29,4 +29,4 @@ const objects = {
     }
 }
 
-export default objects;
+export default state;

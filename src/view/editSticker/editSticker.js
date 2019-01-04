@@ -1,6 +1,6 @@
 import './editSticker.css';
 import addMiniSigns from '../../model/addMiniSigns';
-import objects from '../../model/objects';
+import objects from '../../model/state';
 import xhrYaMap from '../../control/xhrYaMap';
 
 export default function editSticker(id, type) {

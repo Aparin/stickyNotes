@@ -3,7 +3,7 @@ import makeDOMelement from './makeDOMElement';
 import addMiniSigns from './addMiniSigns';
 import editSticker from '../view/editSticker/editSticker';
 import editMapSticker from '../view/editMapSticker';
-import objects from './objects';
+import objects from './state';
 
 export default class Sticker {
     constructor(indx) {

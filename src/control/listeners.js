@@ -5,7 +5,7 @@ import clear from './clear';
 import editSticker from '../view/editSticker/editSticker';
 import editMapSticker from '../view/editMapSticker';
 import currentId from '../model/currentId';
-import objects from '../model/objects';
+import objects from '../model/state';
 
 export default function listeners() {
     plus.onclick = function() {

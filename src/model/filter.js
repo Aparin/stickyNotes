@@ -1,4 +1,4 @@
-import objects from './objects';
+import state from './state';
 import clear from '../control/clear';
 import Sticker from './Sticker';
 
@@ -7,7 +7,7 @@ export default function filter(searchStr, titleCheck, contentCheck) {
         if (!document.getElementById(i)) { break };
         document.getElementById(i).style.display = 'inline-block';
     }
-    const arr = objects.get();
+    const arr = state.get();
 
     const newArr = [];
     arr.map((element, index) => {
