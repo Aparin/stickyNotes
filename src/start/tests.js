@@ -8,10 +8,14 @@ import xhrYaMap from '../control/xhrYaMap';
 
 let module;
 const testObj = { title: "New title" };
-const testState = [
-    { title: 'Title1', content: 'content1', keyWords: 'keyword1', adress: '' },
-    { title: 'Title2', content: 'content2', keyWords: 'keyword2', adress: 'adress2' }
-];
+const testState = [];
+for (let i = 0; i < 4; i += 2) {
+
+    testState[i] = { title: 'Title' + i, content: 'content' + i, keyWords: 'keyword' + i, adress: '' };
+
+    const j = i + 1;
+    testState[j] = { title: 'Title' + j, content: 'content' + j, keyWords: 'keyword' + j, adress: 'adress' + j };
+}
 
 const error = (module, err) => {
     console.log(`В коде модуля "${module}" ошибка "${err.name}": ${err.message}`);
@@ -35,7 +39,8 @@ describe(module, function() {
     } catch (e) {
         error(module, e);
     }
-});
+})
+
 
 /***** state  *****/
 module = 'state';
@@ -94,7 +99,7 @@ describe(module, function() {
             assert.equal('block',
                 window.getComputedStyle(el, null).getPropertyValue('display'));
         });
-        it('Редактируем как обычный стикер', function() {
+        it('Открываем как обычный стикер', function() {
             sticker.full();
             assert.equal('editSticker', el.className);
         });
@@ -103,10 +108,10 @@ describe(module, function() {
         stickerMap.toDOM();
         stickerMap.full('map');
         const map = document.getElementById('2');
-        it('Редактируем как map-стикер', function() {
+        it('Открываем как map-стикер', function() {
             assert.equal('editMapSticker', map.className);
         });
-        setTimeout(() => { // иначе удаляет раньше, чем отработали предыдущие блоки, особенно 'editMapSticker'
+        setTimeout(() => { // иначе удаляет раньше, чем отработали предыдущие блоки, особенно 'map-стикер'
             el.remove();
             map.remove();
         }, 2000);
@@ -116,9 +121,73 @@ describe(module, function() {
 });
 
 /***** editSticker *****/
-/*
-let id = 2;
-let sticker2 = new Sticker(id);
-sticker2.toDOM();
+module = 'editSticker';
+let id = 3;
+let sticker3 = new Sticker(id);
+sticker3.toDOM();
 editSticker(id, '');
-*/
+const el3 = document.getElementById(id);
+describe(module, () => {
+    try {
+        it(`Проверка значка 'закрыть'`, () => {
+            assert.equal('close', el3.children[0].getAttribute('data-action'));
+        })
+        it(`Проверка значка 'дискета'`, () => {
+            assert.equal('ok', el3.children[1].getAttribute('data-action'));
+        })
+        it(`Проверка поля 'Заголовок'`, () => {
+            assert.equal('INPUT', el3.children[2].nodeName);
+        })
+        it(`Проверка поля 'Место для заметок'`, () => {
+            assert.equal('TEXTAREA', el3.children[3].nodeName);
+        })
+        it(`Проверка поля 'keyWords'`, () => {
+            assert.equal('INPUT', el3.children[4].nodeName);
+        })
+        setTimeout(() => {
+            el3.remove();
+        }, 200);
+    } catch (e) {
+        error(module, e);
+    }
+});
+
+module = 'editSticker / map';
+id = 4;
+const sticker4 = new Sticker(id);
+sticker4.toDOM();
+editSticker(id, '');
+const el4 = document.getElementById(id);
+describe(module, () => {
+    try {
+        it(`Map. Проверка значка 'закрыть'`, () => {
+            assert.equal('close', el4.children[0].getAttribute('data-action'));
+        })
+        it(`Map. Проверка значка 'дискета'`, () => {
+            assert.equal('ok', el4.children[1].getAttribute('data-action'));
+        })
+        it(`Map. Проверка поля 'Заголовок'`, () => {
+            assert.equal('INPUT', el4.children[2].nodeName);
+        })
+        it(`Map. Проверка поля 'Место для заметок'`, () => {
+            assert.equal('TEXTAREA', el4.children[3].nodeName);
+        })
+        it(`Map. Проверка поля 'Адрес'`, () => {
+            assert.equal('INPUT', el4.children[4].nodeName);
+        })
+        it(`Map. Проверка значка 'reload'`, () => {
+            assert.equal('IMG', el4.children[5].nodeName);
+        })
+        it(`Map. Проверка блока 'Карта'`, () => {
+            assert.equal('map', el4.children[6].id);
+        })
+        it(`Map. Проверка поля 'keyWords'`, () => {
+            assert.equal('INPUT', el4.children[7].nodeName);
+        })
+        setTimeout(() => {
+            el4.remove();
+        }, 2000);
+    } catch (e) {
+        error(module, e);
+    }
+});

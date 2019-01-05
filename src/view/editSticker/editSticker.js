@@ -19,7 +19,7 @@ export default function editSticker(id, type) {
     <img src="img/save_18.png" class="editBig" title="Применить изменения" 
     data-action="ok">
     <input type="text" style="width:250px" draggable="false" value="${title}" placeholder="Введите заголовок">
-    <br />
+    
     <textarea name="textArea" placeholder="Место для заметок">${content}</textarea>`;
     if (type === 'map' || (adress !== "undefined" && adress)) {
         sticker.innerHTML += `  
