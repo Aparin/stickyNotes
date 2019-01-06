@@ -41,7 +41,7 @@ export default function editSticker(id, type) {
         if (action == 'ok') {
             title = sticker.getElementsByTagName('input')[0].value;
             content = sticker.getElementsByTagName('textArea')[0].value;
-            if (adress) {
+            if (adress !== "undefined" && adress) {
                 adress = sticker.getElementsByTagName('input')[1].value;
                 keyWords = sticker.getElementsByTagName('input')[2].value;
             } else {

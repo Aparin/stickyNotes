@@ -39,20 +39,4 @@ export default function listeners() {
             }
         }
     };
-    /*
-    field.addEventListener('mousedown', function(e) {
-        let target = e.target;
-        while (target != document) {
-            const dataAction = target.getAttribute('data-action');
-            const style = target.getAttribute('class');
-            if (dataAction == 'edit' || dataAction == 'delete' || dataAction == 'ok' ||
-                dataAction == 'close') { return }
-            if (dataAction == 'sticker' && style != 'editSticker' && style != 'editMapSticker') {
-                if (event.which == 1) moveTheSticker(target.id);
-                return;
-            }
-            target = target.parentNode;
-        }
-    });
-    */
-}
+};
