@@ -3,7 +3,7 @@ import save from './save';
 import deleteSticker from '../view/deleteSticker';
 import clear from './clear';
 import editSticker from '../view/editSticker/editSticker';
-import editMapSticker from '../view/editMapSticker';
+// import editMapSticker from '../view/_editMapSticker';
 import currentId from '../model/currentId';
 import state from '../model/state';
 

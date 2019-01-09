@@ -26,7 +26,6 @@ const error = (module, err) => {
 }
 
 /****************** MODEL *****************/
-
 /***** makeDOMelement  *****/
 module = 'makeDOMelement';
 describe(module, function() {
@@ -40,7 +39,6 @@ describe(module, function() {
         error(module, e);
     }
 })
-
 
 /***** state  *****/
 module = 'state';
@@ -73,7 +71,6 @@ describe(module, function() {
 });
 
 /****************** VIEW ******************/
-
 /***** Sticker *****/
 module = 'Sticker';
 describe(module, function() {
@@ -122,12 +119,12 @@ describe(module, function() {
 
 /***** editSticker *****/
 module = 'editSticker';
-let id = 3;
-let sticker3 = new Sticker(id);
-sticker3.toDOM();
-editSticker(id, '');
-const el3 = document.getElementById(id);
 describe(module, () => {
+    let id = 3;
+    let sticker3 = new Sticker(id);
+    sticker3.toDOM();
+    editSticker(id, '');
+    const el3 = document.getElementById(id);
     try {
         it(`Проверка значка 'закрыть'`, () => {
             assert.equal('close', el3.children[0].getAttribute('data-action'));
@@ -153,12 +150,12 @@ describe(module, () => {
 });
 
 module = 'editSticker / map';
-id = 4;
-const sticker4 = new Sticker(id);
-sticker4.toDOM();
-editSticker(id, '');
-const el4 = document.getElementById(id);
 describe(module, () => {
+    id = 4;
+    const sticker4 = new Sticker(id);
+    sticker4.toDOM();
+    editSticker(id, '');
+    const el4 = document.getElementById(id);
     try {
         it(`Map. Проверка значка 'закрыть'`, () => {
             assert.equal('close', el4.children[0].getAttribute('data-action'));
@@ -186,6 +183,52 @@ describe(module, () => {
         })
         setTimeout(() => {
             el4.remove();
+        }, 2000);
+    } catch (e) {
+        error(module, e);
+    }
+});
+
+/***** menu *****/
+module = 'menu';
+describe(module, function() {
+    try {
+        state.set(testState);
+
+        const sticker = new Sticker(1);
+        it('Создание нового стикера', () => {
+            assert.equal(sticker.element.title, state.getElement(1).title);
+        });
+
+        sticker.toDOM();
+        const el = document.getElementById('1');
+        it('Отправляем в DOM', () => {
+            assert.equal(true, !!el);
+        });
+        it('Скрываем стикер', () => {
+            sticker.hide();
+            assert.equal('none', el.style.display);
+        });
+        it('Отображаем стикер', () => {
+            sticker.show();
+            assert.equal('block',
+                window.getComputedStyle(el, null).getPropertyValue('display'));
+        });
+        it('Открываем как обычный стикер', function() {
+            sticker.full();
+            assert.equal('editSticker', el.className);
+        });
+
+        const stickerMap = new Sticker(2);
+        stickerMap.toDOM();
+        stickerMap.full('map');
+        const map = document.getElementById('2');
+        it('Открываем как map-стикер', function() {
+            assert.equal('editMapSticker', map.className);
+        });
+        setTimeout(() => { // иначе удаляет раньше, чем отработали предыдущие блоки, особенно 'map-стикер'
+            el.remove();
+            map.remove();
         }, 2000);
     } catch (e) {
         error(module, e);
