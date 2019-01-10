@@ -305,6 +305,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/model/search.js":
+/*!*****************************!*\
+  !*** ./src/model/search.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return search; });\n/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./filter */ \"./src/model/filter.js\");\n/* harmony import */ var _view_popup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../view/popup */ \"./src/view/popup/index.js\");\n\r\n\r\n\r\nfunction search() {\r\n    const toSearch = () => {\r\n        const text = searchArea.value;\r\n        const tCheck = titleCheck.checked;\r\n        const cCheck = contentCheck.checked;\r\n        if (tCheck && cCheck) { search.placeholder = 'По ключам, заголовкам, содержимому'; } else\r\n        if (tCheck) { search.placeholder = 'По ключам и заголовкам'; } else\r\n        if (cCheck) { search.placeholder = 'По ключам и содержимому'; } else {\r\n            search.placeholder = 'Поиск по ключевым словам';\r\n        }\r\n        Object(_filter__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(text, tCheck, cCheck);\r\n    }\r\n    searchArea.oninput = function(e) {\r\n        toSearch();\r\n    }\r\n    titleCheck.onchange = function(e) {\r\n        toSearch();\r\n    }\r\n    contentCheck.onchange = function(e) {\r\n        toSearch();\r\n    }\r\n    question.onclick = function(e) {\r\n        Object(_view_popup__WEBPACK_IMPORTED_MODULE_1__[\"default\"])({ msg: `<p>Галка в <span style=\"color: green;\">зелёном квадрате</span> <br>\r\n                добавляет поиск по заголовкам. </p>\r\n                <p>В <span style=\"color:orange;\">оранжевом</span> - добавляет поиск по содержимому</p>`, e: e, height: 160 });\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/model/search.js?");
+
+/***/ }),
+
 /***/ "./src/model/state.js":
 /*!****************************!*\
   !*** ./src/model/state.js ***!
@@ -417,7 +429,7 @@ eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader!
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return panel; });\n/* harmony import */ var _menu_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu.css */ \"./src/view/menu/menu.css\");\n/* harmony import */ var _menu_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_menu_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _model_filter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../model/filter */ \"./src/model/filter.js\");\n/* harmony import */ var _popup___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../popup/ */ \"./src/view/popup/index.js\");\n\r\n\r\n\r\n\r\nfunction panel() {\r\n\r\n    const toSearch = () => {\r\n        const text = search.value;\r\n        const tCheck = titleCheck.checked;\r\n        const cCheck = contentCheck.checked;\r\n        if (tCheck && cCheck) { search.placeholder = 'По ключам, заголовкам, содержимому'; } else\r\n        if (tCheck) { search.placeholder = 'По ключам и заголовкам'; } else\r\n        if (cCheck) { search.placeholder = 'По ключам и содержимому'; } else {\r\n            search.placeholder = 'Поиск по ключевым словам';\r\n        }\r\n        Object(_model_filter__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(text, tCheck, cCheck);\r\n    }\r\n    search.oninput = function(e) {\r\n        toSearch();\r\n    }\r\n    titleCheck.onchange = function(e) {\r\n        toSearch();\r\n    }\r\n    contentCheck.onchange = function(e) {\r\n        toSearch();\r\n    }\r\n    question.onclick = function(e) {\r\n        Object(_popup___WEBPACK_IMPORTED_MODULE_2__[\"default\"])({ msg: `<p>Галка в <span style=\"color: green;\">зелёном квадрате</span> <br>\r\n                    добавляет поиск по заголовкам. </p>\r\n                    <p>В <span style=\"color:orange;\">оранжевом</span> - добавляет поиск по содержимому</p>`, e: e, height: 160 });\r\n    }\r\n};\n\n//# sourceURL=webpack:///./src/view/menu/menu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return panel; });\n/* harmony import */ var _menu_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu.css */ \"./src/view/menu/menu.css\");\n/* harmony import */ var _menu_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_menu_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _model_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../model/search */ \"./src/model/search.js\");\n\r\n\r\n\r\nfunction panel() {\r\n    Object(_model_search__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n};\n\n//# sourceURL=webpack:///./src/view/menu/menu.js?");
 
 /***/ }),
 
