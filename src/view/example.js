@@ -1,9 +1,12 @@
 import Sticker from '../model/Sticker';
+import state from '../model/state';
+import currentId from '../model/currentId';
 
 export default function example() {
     const makeSticker = (title, content, keyWords, adress) => {
-        const sticker = new Sticker({ title, content, keyWords, adress });
-        sticker.create();
+        state.add({ title, content, keyWords, adress });
+        const sticker = new Sticker(currentId());
+        sticker.toDOM();
         sticker.show();
     }
     makeSticker('Become an expert in JavaScript', 'As soon as posible', 'учёба');

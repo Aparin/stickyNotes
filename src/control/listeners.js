@@ -23,7 +23,7 @@ export default function listeners() {
         sticker.full('map');
     }
     saving.onclick = function() { save(); }
-    cleaning.onclick = function() { clear(); }
+    cleaning.onclick = function(e) { clear('t1', e); }
 
     const field = document.getElementById('stickyNotes');
 

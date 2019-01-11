@@ -11,7 +11,7 @@ div#popup {
     border: 15px solid orange;
     padding: 10px;
     background-color: white;
-    z-index: 1000;
+    z-index: 10000;
 }
 
 span.closePopup {
