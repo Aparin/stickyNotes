@@ -3,7 +3,6 @@ import example from '../view/example';
 import state from '../model/state';
 
 export default function load() {
-    example();
     if (!localStorage.getItem('t1')) example();
 
     for (let i = 1; localStorage.getItem(`t${i}`); i++) {

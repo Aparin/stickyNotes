@@ -17,23 +17,17 @@ export default function clear(key, e) {
                     } else { break; }
                 }
                 localStorage.clear();
-                this.parentNode.removeChild(this)
+                popupArea.parentNode.removeChild(popupArea);
             } else {
-                this.parentNode.removeChild(this)
+                popupArea.parentNode.removeChild(popupArea);
             }
         }
         let inp = 'style="margin: 5px; padding: 3px; font-size: 14px;"';
-        div.innerHTML = `<input ${inp} 
-        type="button" value="Да"><input ${inp} type="button" value="Нет">`;
+        div.innerHTML = `
+            <input ${inp} type="button" value="Да">
+            <input ${inp} type="button" value="Нет">`;
 
-        document.getElementById('popup').appendChild(div);
-        /*
-                div.style.cssText = `
-                    font-size:14px; text-align:center; padding:10px; position:fixed; 
-                    zIndex: 1000; background-color: white; width:200px; height:100px; 
-                    top: 50px; left: 100px; margin-right:-100px; 
-                    margin-bottom:-20px; border: 1px dotted #000`;
-                   
-                 */
+        const popupArea = document.getElementById('popup');
+        popupArea.appendChild(div);
     }
 }
