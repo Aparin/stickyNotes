@@ -1,6 +1,7 @@
 import Sticker from '../model/Sticker';
 import state from '../model/state';
 import currentId from '../model/currentId';
+import guide from './guide';
 
 export default function example() {
     const makeSticker = (title, content, keyWords, adress) => {
@@ -45,6 +46,5 @@ export default function example() {
     MVP — шаблон проектирования пользовательского интерфейса, который был разработан для облегчения автоматического модульного тестирования и улучшения разделения ответственности в презентационной логике (отделения логики от отображения)
     `, 'программирование, учёба, шаблоны проектирования');
 
-    const ex = document.getElementById('example');
-    // ex.remove();
+    guide();
 }

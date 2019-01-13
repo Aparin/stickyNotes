@@ -1,0 +1,13 @@
+button#next {
+    margin: 10px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+button#prev {
+    margin: 10px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
