@@ -1,7 +1,7 @@
 import Sticker from '../model/Sticker';
 import state from '../model/state';
 import currentId from '../model/currentId';
-import guide from './guide';
+import guide from './guide/guide';
 
 export default function example() {
     const makeSticker = (title, content, keyWords, adress) => {
