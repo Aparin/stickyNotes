@@ -1,4 +1,4 @@
-import message from '../view/message/message';
+// import message from '../view/message/message';
 import state from '../model/state';
 export default function save() {
     localStorage.clear();

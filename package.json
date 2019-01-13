@@ -1,6 +1,6 @@
 {
     "name": "stickynotes",
-    "version": "1.5.16",
+    "version": "1.5.17",
     "description": "Быстрый поиск по записям",
     "main": "dist/index.html",
     "scripts": {

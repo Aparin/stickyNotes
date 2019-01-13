@@ -3,7 +3,6 @@ import yaMap from '../view/yaMap';
 export default function xhrYaMap(adress, id) {
     function xhr(adress) {
         const request = (resp) => {
-            // console.log(resp); // {"response":{"GeoObjectCollection": ...
             let obj = JSON.parse(resp); // конвертируем из json в объект js // 
             obj = obj.response; // {GeoObjectCollection: {…}}
             obj = obj.GeoObjectCollection; // {metaDataProperty: {…}, featureMember: Array(1)}
