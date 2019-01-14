@@ -1,5 +1,6 @@
 import filter from './filter';
 import popup from '../view/popup';
+import guide from '../view/guide/guide';
 
 export default function search() {
     const toSearch = () => {
@@ -22,9 +23,7 @@ export default function search() {
     contentCheck.onchange = function(e) {
         toSearch();
     }
-    question.onclick = function(e) {
-        popup({ msg: `<p>Галка в <span style="color: green;">зелёном квадрате</span> <br>
-                добавляет поиск по заголовкам. </p>
-                <p>В <span style="color:orange;">оранжевом</span> - добавляет поиск по содержимому</p>`, e: e, height: 160 });
+    question.onclick = function() {
+        guide();
     }
 }

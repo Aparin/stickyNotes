@@ -12,9 +12,10 @@ const guide = () => {
     const popArea = document.getElementById('popup');
     const popMess = document.getElementById('popMess');
 
-    let tab = 0;
     const msg = [
         [150, 'Это система создания и хранения коротких записей и поиска по ним'],
+        [210, `Для вызова этой справки в дальнейшем, нужно нажать знак вопроса:
+            <img src="./img/guideImg/question.png">`],
         [220, `Для создания новой записи нажмите кнопку "Новый":
             <img src="./img/guideImg/new.png">
             а затем "Добавить стикер"`],
@@ -27,7 +28,23 @@ const guide = () => {
         [270, `Для поиска по ключевым словам вводите их в поле:  <img src="./img/guideImg/search.png"> Галка в зелёном квадрате добавляет поиск по заголовкам. В оранжевом - добавляет поиск по содержимому`]
     ];
     const msgLength = msg.length;
+    let tab = 0;
+    const localTab = localStorage.getItem(`tab`);
+    if (localTab && localTab >= 0 && localTab < msgLength - 1) {
+        tab = localTab;
+    }
+
     const hint = () => {
+        localStorage.setItem(`tab`, tab);
+        if (+tab < 0) {
+            tab = 0;
+            localStorage.setItem(`tab`, tab);
+        }
+        if (+tab > msgLength - 1) {
+            tab = msgLength - 1;
+            localStorage.setItem(`tab`, tab);
+        }
+        popArea.style.top = 500 - msg[tab][0] + 'px';
         popArea.style.height = msg[tab][0] + 'px';
         popMess.innerHTML = msg[tab][1];
 
