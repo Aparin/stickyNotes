@@ -22,24 +22,11 @@ export default function yaMap(coords) {
             // от 0 (весь мир) до 19.
             zoom: 16
         });
-        /*
-        var point = new ymaps.Placemark([y, x], {
-            balloonContentHeader: 'Париж',
-            balloonContentBody: '<img src="https://34travel.me/media/upload/images/2016/october/Paris_palasatka/02.jpg" height="153" width="200">',
-            balloonContentFooter: 'Париж - столица Франции',
-        }, {
-            preset: 'islands#darkOrangeDotIcon'
-        });
-        */
         
         // Создание метки 
         const myPlacemark = new ymaps.Placemark(
             // Координаты метки
             [y, x],
-            /*
-            { balloonContentBody: '<img src="https://34travel.me/media/upload/images/2016/october/Paris_palasatka/02.jpg" height="153" width="200">' },
-            { iconColor: '#ff0000' }
-            */
         );
         // Добавление метки на карту
         myMap.geoObjects.add(myPlacemark);
