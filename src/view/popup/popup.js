@@ -1,26 +1,30 @@
+/* eslint-disable no-restricted-globals */
 export default function popup(data) {
-    const { msg, height = 120, e } = data;
+  const { msg, height = 120, e } = data;
 
-    const node = document.createElement('div');
-    node.id = 'popup';
-    const close = `<span class="closePopup" onclick="document.getElementById('popup').remove();">X</span>`;
-    const html = close + msg;
+  const node = document.createElement('div');
+  node.id = 'popup';
+  const close = '<span class="closePopup" onclick="document.getElementById(\'popup\').remove();">X</span>';
+  const html = close + msg;
 
-    node.insertAdjacentHTML('afterbegin', html);
-    node.style.height = height + 'px';
+  node.insertAdjacentHTML('afterbegin', html);
+  node.style.height = `${height}px`;
 
-    let top, left;
-    if (e) {
-        const elem = e.currentTarget.getBoundingClientRect();
-        top = elem.top + 40;
-        left = elem.left;
-        if (left > 320) { left -= 310 } else left = 0;
-    } else {
-        top = screen.height / 2 - height / 2;
-        left = screen.width / 2 - 160;
-    }
+  let top;
+  let left;
 
-    node.style.top = top + 'px';
-    node.style.left = left + 'px';
-    document.querySelector('body').appendChild(node);
+  if (e) {
+    const elem = e.currentTarget.getBoundingClientRect();
+    top = elem.top + 40;
+    // eslint-disable-next-line prefer-destructuring
+    left = elem.left;
+    if (left > 320) { left -= 310; } else left = 0;
+  } else {
+    top = screen.height / 2 - height / 2;
+    left = screen.width / 2 - 160;
+  }
+
+  node.style.top = `${top}px`;
+  node.style.left = `${left}px`;
+  document.querySelector('body').appendChild(node);
 }
